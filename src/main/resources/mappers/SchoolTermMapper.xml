@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tianyuan.WisdomTeacherServer.mapper.SchoolTermMapper">
+  <resultMap id="BaseResultMap" type="com.tianyuan.WisdomTeacherServer.bean.SchoolTerm">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <id column="schoolid" jdbcType="INTEGER" property="schoolid" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="stardate" jdbcType="VARCHAR" property="stardate" />
+    <result column="enddate" jdbcType="VARCHAR" property="enddate" />
+    <result column="seesaw" jdbcType="INTEGER" property="seesaw" />
+    <result column="remark" jdbcType="VARCHAR" property="remark" />
+    <result column="sort" jdbcType="INTEGER" property="sort" />
+    <result column="createuid" jdbcType="INTEGER" property="createuid" />
+    <result column="createtime" jdbcType="TIMESTAMP" property="createtime" />
+    <result column="updateuid" jdbcType="INTEGER" property="updateuid" />
+    <result column="updatetime" jdbcType="TIMESTAMP" property="updatetime" />
+    <result column="del" jdbcType="BIT" property="del" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, schoolid, name, stardate, enddate, seesaw, remark, sort, createuid, createtime, 
+    updateuid, updatetime, del
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="com.tianyuan.WisdomTeacherServer.bean.SchoolTermKey" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from school_term
+    where id = #{id,jdbcType=INTEGER}
+      and schoolid = #{schoolid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="com.tianyuan.WisdomTeacherServer.bean.SchoolTermKey">
+    delete from school_term
+    where id = #{id,jdbcType=INTEGER}
+      and schoolid = #{schoolid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.tianyuan.WisdomTeacherServer.bean.SchoolTerm">
+    insert into school_term (id, schoolid, name, 
+      stardate, enddate, seesaw, 
+      remark, sort, createuid, 
+      createtime, updateuid, updatetime, 
+      del)
+    values (#{id,jdbcType=INTEGER}, #{schoolid,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, 
+      #{stardate,jdbcType=VARCHAR}, #{enddate,jdbcType=VARCHAR}, #{seesaw,jdbcType=INTEGER}, 
+      #{remark,jdbcType=VARCHAR}, #{sort,jdbcType=INTEGER}, #{createuid,jdbcType=INTEGER}, 
+      #{createtime,jdbcType=TIMESTAMP}, #{updateuid,jdbcType=INTEGER}, #{updatetime,jdbcType=TIMESTAMP}, 
+      #{del,jdbcType=BIT})
+  </insert>
+  <insert id="insertSelective" parameterType="com.tianyuan.WisdomTeacherServer.bean.SchoolTerm">
+    insert into school_term
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="schoolid != null">
+        schoolid,
+      </if>
+      <if test="name != null">
+        name,
+      </if>
+      <if test="stardate != null">
+        stardate,
+      </if>
+      <if test="enddate != null">
+        enddate,
+      </if>
+      <if test="seesaw != null">
+        seesaw,
+      </if>
+      <if test="remark != null">
+        remark,
+      </if>
+      <if test="sort != null">
+        sort,
+      </if>
+      <if test="createuid != null">
+        createuid,
+      </if>
+      <if test="createtime != null">
+        createtime,
+      </if>
+      <if test="updateuid != null">
+        updateuid,
+      </if>
+      <if test="updatetime != null">
+        updatetime,
+      </if>
+      <if test="del != null">
+        del,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="schoolid != null">
+        #{schoolid,jdbcType=INTEGER},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="stardate != null">
+        #{stardate,jdbcType=VARCHAR},
+      </if>
+      <if test="enddate != null">
+        #{enddate,jdbcType=VARCHAR},
+      </if>
+      <if test="seesaw != null">
+        #{seesaw,jdbcType=INTEGER},
+      </if>
+      <if test="remark != null">
+        #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="sort != null">
+        #{sort,jdbcType=INTEGER},
+      </if>
+      <if test="createuid != null">
+        #{createuid,jdbcType=INTEGER},
+      </if>
+      <if test="createtime != null">
+        #{createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateuid != null">
+        #{updateuid,jdbcType=INTEGER},
+      </if>
+      <if test="updatetime != null">
+        #{updatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="del != null">
+        #{del,jdbcType=BIT},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.tianyuan.WisdomTeacherServer.bean.SchoolTerm">
+    update school_term
+    <set>
+      <if test="name != null">
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="stardate != null">
+        stardate = #{stardate,jdbcType=VARCHAR},
+      </if>
+      <if test="enddate != null">
+        enddate = #{enddate,jdbcType=VARCHAR},
+      </if>
+      <if test="seesaw != null">
+        seesaw = #{seesaw,jdbcType=INTEGER},
+      </if>
+      <if test="remark != null">
+        remark = #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="sort != null">
+        sort = #{sort,jdbcType=INTEGER},
+      </if>
+      <if test="createuid != null">
+        createuid = #{createuid,jdbcType=INTEGER},
+      </if>
+      <if test="createtime != null">
+        createtime = #{createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateuid != null">
+        updateuid = #{updateuid,jdbcType=INTEGER},
+      </if>
+      <if test="updatetime != null">
+        updatetime = #{updatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="del != null">
+        del = #{del,jdbcType=BIT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+      and schoolid = #{schoolid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.tianyuan.WisdomTeacherServer.bean.SchoolTerm">
+    update school_term
+    set name = #{name,jdbcType=VARCHAR},
+      stardate = #{stardate,jdbcType=VARCHAR},
+      enddate = #{enddate,jdbcType=VARCHAR},
+      seesaw = #{seesaw,jdbcType=INTEGER},
+      remark = #{remark,jdbcType=VARCHAR},
+      sort = #{sort,jdbcType=INTEGER},
+      createuid = #{createuid,jdbcType=INTEGER},
+      createtime = #{createtime,jdbcType=TIMESTAMP},
+      updateuid = #{updateuid,jdbcType=INTEGER},
+      updatetime = #{updatetime,jdbcType=TIMESTAMP},
+      del = #{del,jdbcType=BIT}
+    where id = #{id,jdbcType=INTEGER}
+      and schoolid = #{schoolid,jdbcType=INTEGER}
+  </update>
+</mapper>

@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tianyuan.WisdomTeacherServer.mapper.ClassCommentMapper">
+  <resultMap id="BaseResultMap" type="com.tianyuan.WisdomTeacherServer.bean.ClassComment">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="dynamicid" jdbcType="INTEGER" property="dynamicid" />
+    <result column="ownerid" jdbcType="INTEGER" property="ownerid" />
+    <result column="content" jdbcType="VARCHAR" property="content" />
+    <result column="pid" jdbcType="INTEGER" property="pid" />
+    <result column="createuid" jdbcType="INTEGER" property="createuid" />
+    <result column="createtime" jdbcType="TIMESTAMP" property="createtime" />
+    <result column="del" jdbcType="BIT" property="del" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, dynamicid, ownerid, content, pid, createuid, createtime, del
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from class_comment
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from class_comment
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.tianyuan.WisdomTeacherServer.bean.ClassComment">
+    insert into class_comment (id, dynamicid, ownerid, 
+      content, pid, createuid, 
+      createtime, del)
+    values (#{id,jdbcType=INTEGER}, #{dynamicid,jdbcType=INTEGER}, #{ownerid,jdbcType=INTEGER}, 
+      #{content,jdbcType=VARCHAR}, #{pid,jdbcType=INTEGER}, #{createuid,jdbcType=INTEGER}, 
+      #{createtime,jdbcType=TIMESTAMP}, #{del,jdbcType=BIT})
+  </insert>
+  <insert id="insertSelective" parameterType="com.tianyuan.WisdomTeacherServer.bean.ClassComment">
+    insert into class_comment
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="dynamicid != null">
+        dynamicid,
+      </if>
+      <if test="ownerid != null">
+        ownerid,
+      </if>
+      <if test="content != null">
+        content,
+      </if>
+      <if test="pid != null">
+        pid,
+      </if>
+      <if test="createuid != null">
+        createuid,
+      </if>
+      <if test="createtime != null">
+        createtime,
+      </if>
+      <if test="del != null">
+        del,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="dynamicid != null">
+        #{dynamicid,jdbcType=INTEGER},
+      </if>
+      <if test="ownerid != null">
+        #{ownerid,jdbcType=INTEGER},
+      </if>
+      <if test="content != null">
+        #{content,jdbcType=VARCHAR},
+      </if>
+      <if test="pid != null">
+        #{pid,jdbcType=INTEGER},
+      </if>
+      <if test="createuid != null">
+        #{createuid,jdbcType=INTEGER},
+      </if>
+      <if test="createtime != null">
+        #{createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="del != null">
+        #{del,jdbcType=BIT},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.tianyuan.WisdomTeacherServer.bean.ClassComment">
+    update class_comment
+    <set>
+      <if test="dynamicid != null">
+        dynamicid = #{dynamicid,jdbcType=INTEGER},
+      </if>
+      <if test="ownerid != null">
+        ownerid = #{ownerid,jdbcType=INTEGER},
+      </if>
+      <if test="content != null">
+        content = #{content,jdbcType=VARCHAR},
+      </if>
+      <if test="pid != null">
+        pid = #{pid,jdbcType=INTEGER},
+      </if>
+      <if test="createuid != null">
+        createuid = #{createuid,jdbcType=INTEGER},
+      </if>
+      <if test="createtime != null">
+        createtime = #{createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="del != null">
+        del = #{del,jdbcType=BIT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.tianyuan.WisdomTeacherServer.bean.ClassComment">
+    update class_comment
+    set dynamicid = #{dynamicid,jdbcType=INTEGER},
+      ownerid = #{ownerid,jdbcType=INTEGER},
+      content = #{content,jdbcType=VARCHAR},
+      pid = #{pid,jdbcType=INTEGER},
+      createuid = #{createuid,jdbcType=INTEGER},
+      createtime = #{createtime,jdbcType=TIMESTAMP},
+      del = #{del,jdbcType=BIT}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

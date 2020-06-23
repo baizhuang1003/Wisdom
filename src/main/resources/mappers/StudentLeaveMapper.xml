@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tianyuan.WisdomTeacherServer.mapper.StudentLeaveMapper">
+  <resultMap id="BaseResultMap" type="com.tianyuan.WisdomTeacherServer.bean.StudentLeave">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <id column="schoolid" jdbcType="INTEGER" property="schoolid" />
+    <result column="guardionid" jdbcType="INTEGER" property="guardionid" />
+    <result column="guardionname" jdbcType="VARCHAR" property="guardionname" />
+    <result column="guardionmobile" jdbcType="VARCHAR" property="guardionmobile" />
+    <result column="studentid" jdbcType="INTEGER" property="studentid" />
+    <result column="studentname" jdbcType="VARCHAR" property="studentname" />
+    <result column="teacherid" jdbcType="INTEGER" property="teacherid" />
+    <result column="teachername" jdbcType="VARCHAR" property="teachername" />
+    <result column="typeid" jdbcType="INTEGER" property="typeid" />
+    <result column="typename" jdbcType="VARCHAR" property="typename" />
+    <result column="starttime" jdbcType="TIMESTAMP" property="starttime" />
+    <result column="endtime" jdbcType="TIMESTAMP" property="endtime" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+    <result column="updatetime" jdbcType="TIMESTAMP" property="updatetime" />
+    <result column="createuid" jdbcType="INTEGER" property="createuid" />
+    <result column="createtime" jdbcType="TIMESTAMP" property="createtime" />
+    <result column="updateuid" jdbcType="INTEGER" property="updateuid" />
+    <result column="del" jdbcType="BIT" property="del" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, schoolid, guardionid, guardionname, guardionmobile, studentid, studentname, teacherid, 
+    teachername, typeid, typename, starttime, endtime, status, updatetime, createuid, 
+    createtime, updateuid, del
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="com.tianyuan.WisdomTeacherServer.bean.StudentLeaveKey" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from student_leave
+    where id = #{id,jdbcType=INTEGER}
+      and schoolid = #{schoolid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="com.tianyuan.WisdomTeacherServer.bean.StudentLeaveKey">
+    delete from student_leave
+    where id = #{id,jdbcType=INTEGER}
+      and schoolid = #{schoolid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.tianyuan.WisdomTeacherServer.bean.StudentLeave">
+    insert into student_leave (id, schoolid, guardionid, 
+      guardionname, guardionmobile, studentid, 
+      studentname, teacherid, teachername, 
+      typeid, typename, starttime, 
+      endtime, status, updatetime, 
+      createuid, createtime, updateuid, 
+      del)
+    values (#{id,jdbcType=INTEGER}, #{schoolid,jdbcType=INTEGER}, #{guardionid,jdbcType=INTEGER}, 
+      #{guardionname,jdbcType=VARCHAR}, #{guardionmobile,jdbcType=VARCHAR}, #{studentid,jdbcType=INTEGER}, 
+      #{studentname,jdbcType=VARCHAR}, #{teacherid,jdbcType=INTEGER}, #{teachername,jdbcType=VARCHAR}, 
+      #{typeid,jdbcType=INTEGER}, #{typename,jdbcType=VARCHAR}, #{starttime,jdbcType=TIMESTAMP}, 
+      #{endtime,jdbcType=TIMESTAMP}, #{status,jdbcType=INTEGER}, #{updatetime,jdbcType=TIMESTAMP}, 
+      #{createuid,jdbcType=INTEGER}, #{createtime,jdbcType=TIMESTAMP}, #{updateuid,jdbcType=INTEGER}, 
+      #{del,jdbcType=BIT})
+  </insert>
+  <insert id="insertSelective" parameterType="com.tianyuan.WisdomTeacherServer.bean.StudentLeave">
+    insert into student_leave
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="schoolid != null">
+        schoolid,
+      </if>
+      <if test="guardionid != null">
+        guardionid,
+      </if>
+      <if test="guardionname != null">
+        guardionname,
+      </if>
+      <if test="guardionmobile != null">
+        guardionmobile,
+      </if>
+      <if test="studentid != null">
+        studentid,
+      </if>
+      <if test="studentname != null">
+        studentname,
+      </if>
+      <if test="teacherid != null">
+        teacherid,
+      </if>
+      <if test="teachername != null">
+        teachername,
+      </if>
+      <if test="typeid != null">
+        typeid,
+      </if>
+      <if test="typename != null">
+        typename,
+      </if>
+      <if test="starttime != null">
+        starttime,
+      </if>
+      <if test="endtime != null">
+        endtime,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+      <if test="updatetime != null">
+        updatetime,
+      </if>
+      <if test="createuid != null">
+        createuid,
+      </if>
+      <if test="createtime != null">
+        createtime,
+      </if>
+      <if test="updateuid != null">
+        updateuid,
+      </if>
+      <if test="del != null">
+        del,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="schoolid != null">
+        #{schoolid,jdbcType=INTEGER},
+      </if>
+      <if test="guardionid != null">
+        #{guardionid,jdbcType=INTEGER},
+      </if>
+      <if test="guardionname != null">
+        #{guardionname,jdbcType=VARCHAR},
+      </if>
+      <if test="guardionmobile != null">
+        #{guardionmobile,jdbcType=VARCHAR},
+      </if>
+      <if test="studentid != null">
+        #{studentid,jdbcType=INTEGER},
+      </if>
+      <if test="studentname != null">
+        #{studentname,jdbcType=VARCHAR},
+      </if>
+      <if test="teacherid != null">
+        #{teacherid,jdbcType=INTEGER},
+      </if>
+      <if test="teachername != null">
+        #{teachername,jdbcType=VARCHAR},
+      </if>
+      <if test="typeid != null">
+        #{typeid,jdbcType=INTEGER},
+      </if>
+      <if test="typename != null">
+        #{typename,jdbcType=VARCHAR},
+      </if>
+      <if test="starttime != null">
+        #{starttime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="endtime != null">
+        #{endtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=INTEGER},
+      </if>
+      <if test="updatetime != null">
+        #{updatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createuid != null">
+        #{createuid,jdbcType=INTEGER},
+      </if>
+      <if test="createtime != null">
+        #{createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateuid != null">
+        #{updateuid,jdbcType=INTEGER},
+      </if>
+      <if test="del != null">
+        #{del,jdbcType=BIT},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.tianyuan.WisdomTeacherServer.bean.StudentLeave">
+    update student_leave
+    <set>
+      <if test="guardionid != null">
+        guardionid = #{guardionid,jdbcType=INTEGER},
+      </if>
+      <if test="guardionname != null">
+        guardionname = #{guardionname,jdbcType=VARCHAR},
+      </if>
+      <if test="guardionmobile != null">
+        guardionmobile = #{guardionmobile,jdbcType=VARCHAR},
+      </if>
+      <if test="studentid != null">
+        studentid = #{studentid,jdbcType=INTEGER},
+      </if>
+      <if test="studentname != null">
+        studentname = #{studentname,jdbcType=VARCHAR},
+      </if>
+      <if test="teacherid != null">
+        teacherid = #{teacherid,jdbcType=INTEGER},
+      </if>
+      <if test="teachername != null">
+        teachername = #{teachername,jdbcType=VARCHAR},
+      </if>
+      <if test="typeid != null">
+        typeid = #{typeid,jdbcType=INTEGER},
+      </if>
+      <if test="typename != null">
+        typename = #{typename,jdbcType=VARCHAR},
+      </if>
+      <if test="starttime != null">
+        starttime = #{starttime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="endtime != null">
+        endtime = #{endtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="status != null">
+        status = #{status,jdbcType=INTEGER},
+      </if>
+      <if test="updatetime != null">
+        updatetime = #{updatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createuid != null">
+        createuid = #{createuid,jdbcType=INTEGER},
+      </if>
+      <if test="createtime != null">
+        createtime = #{createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateuid != null">
+        updateuid = #{updateuid,jdbcType=INTEGER},
+      </if>
+      <if test="del != null">
+        del = #{del,jdbcType=BIT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+      and schoolid = #{schoolid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.tianyuan.WisdomTeacherServer.bean.StudentLeave">
+    update student_leave
+    set guardionid = #{guardionid,jdbcType=INTEGER},
+      guardionname = #{guardionname,jdbcType=VARCHAR},
+      guardionmobile = #{guardionmobile,jdbcType=VARCHAR},
+      studentid = #{studentid,jdbcType=INTEGER},
+      studentname = #{studentname,jdbcType=VARCHAR},
+      teacherid = #{teacherid,jdbcType=INTEGER},
+      teachername = #{teachername,jdbcType=VARCHAR},
+      typeid = #{typeid,jdbcType=INTEGER},
+      typename = #{typename,jdbcType=VARCHAR},
+      starttime = #{starttime,jdbcType=TIMESTAMP},
+      endtime = #{endtime,jdbcType=TIMESTAMP},
+      status = #{status,jdbcType=INTEGER},
+      updatetime = #{updatetime,jdbcType=TIMESTAMP},
+      createuid = #{createuid,jdbcType=INTEGER},
+      createtime = #{createtime,jdbcType=TIMESTAMP},
+      updateuid = #{updateuid,jdbcType=INTEGER},
+      del = #{del,jdbcType=BIT}
+    where id = #{id,jdbcType=INTEGER}
+      and schoolid = #{schoolid,jdbcType=INTEGER}
+  </update>
+</mapper>

@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tianyuan.WisdomTeacherServer.mapper.SchoolAttendanceRecordMapper">
+  <resultMap id="BaseResultMap" type="com.tianyuan.WisdomTeacherServer.bean.SchoolAttendanceRecord">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <id column="schoolid" jdbcType="INTEGER" property="schoolid" />
+    <result column="type" jdbcType="INTEGER" property="type" />
+    <result column="userid" jdbcType="INTEGER" property="userid" />
+    <result column="verifycode" jdbcType="VARCHAR" property="verifycode" />
+    <result column="starttime" jdbcType="TIMESTAMP" property="starttime" />
+    <result column="endtime" jdbcType="TIMESTAMP" property="endtime" />
+    <result column="sensorid" jdbcType="VARCHAR" property="sensorid" />
+    <result column="sn" jdbcType="VARCHAR" property="sn" />
+    <result column="pictureurl" jdbcType="VARCHAR" property="pictureurl" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+    <result column="del" jdbcType="BIT" property="del" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, schoolid, type, userid, verifycode, starttime, endtime, sensorid, sn, pictureurl, 
+    status, del
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="com.tianyuan.WisdomTeacherServer.bean.SchoolAttendanceRecordKey" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from school_attendance_record
+    where id = #{id,jdbcType=INTEGER}
+      and schoolid = #{schoolid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="com.tianyuan.WisdomTeacherServer.bean.SchoolAttendanceRecordKey">
+    delete from school_attendance_record
+    where id = #{id,jdbcType=INTEGER}
+      and schoolid = #{schoolid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.tianyuan.WisdomTeacherServer.bean.SchoolAttendanceRecord">
+    insert into school_attendance_record (id, schoolid, type, 
+      userid, verifycode, starttime, 
+      endtime, sensorid, sn, 
+      pictureurl, status, del
+      )
+    values (#{id,jdbcType=INTEGER}, #{schoolid,jdbcType=INTEGER}, #{type,jdbcType=INTEGER}, 
+      #{userid,jdbcType=INTEGER}, #{verifycode,jdbcType=VARCHAR}, #{starttime,jdbcType=TIMESTAMP}, 
+      #{endtime,jdbcType=TIMESTAMP}, #{sensorid,jdbcType=VARCHAR}, #{sn,jdbcType=VARCHAR}, 
+      #{pictureurl,jdbcType=VARCHAR}, #{status,jdbcType=INTEGER}, #{del,jdbcType=BIT}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.tianyuan.WisdomTeacherServer.bean.SchoolAttendanceRecord">
+    insert into school_attendance_record
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="schoolid != null">
+        schoolid,
+      </if>
+      <if test="type != null">
+        type,
+      </if>
+      <if test="userid != null">
+        userid,
+      </if>
+      <if test="verifycode != null">
+        verifycode,
+      </if>
+      <if test="starttime != null">
+        starttime,
+      </if>
+      <if test="endtime != null">
+        endtime,
+      </if>
+      <if test="sensorid != null">
+        sensorid,
+      </if>
+      <if test="sn != null">
+        sn,
+      </if>
+      <if test="pictureurl != null">
+        pictureurl,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+      <if test="del != null">
+        del,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="schoolid != null">
+        #{schoolid,jdbcType=INTEGER},
+      </if>
+      <if test="type != null">
+        #{type,jdbcType=INTEGER},
+      </if>
+      <if test="userid != null">
+        #{userid,jdbcType=INTEGER},
+      </if>
+      <if test="verifycode != null">
+        #{verifycode,jdbcType=VARCHAR},
+      </if>
+      <if test="starttime != null">
+        #{starttime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="endtime != null">
+        #{endtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="sensorid != null">
+        #{sensorid,jdbcType=VARCHAR},
+      </if>
+      <if test="sn != null">
+        #{sn,jdbcType=VARCHAR},
+      </if>
+      <if test="pictureurl != null">
+        #{pictureurl,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=INTEGER},
+      </if>
+      <if test="del != null">
+        #{del,jdbcType=BIT},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.tianyuan.WisdomTeacherServer.bean.SchoolAttendanceRecord">
+    update school_attendance_record
+    <set>
+      <if test="type != null">
+        type = #{type,jdbcType=INTEGER},
+      </if>
+      <if test="userid != null">
+        userid = #{userid,jdbcType=INTEGER},
+      </if>
+      <if test="verifycode != null">
+        verifycode = #{verifycode,jdbcType=VARCHAR},
+      </if>
+      <if test="starttime != null">
+        starttime = #{starttime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="endtime != null">
+        endtime = #{endtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="sensorid != null">
+        sensorid = #{sensorid,jdbcType=VARCHAR},
+      </if>
+      <if test="sn != null">
+        sn = #{sn,jdbcType=VARCHAR},
+      </if>
+      <if test="pictureurl != null">
+        pictureurl = #{pictureurl,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        status = #{status,jdbcType=INTEGER},
+      </if>
+      <if test="del != null">
+        del = #{del,jdbcType=BIT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+      and schoolid = #{schoolid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.tianyuan.WisdomTeacherServer.bean.SchoolAttendanceRecord">
+    update school_attendance_record
+    set type = #{type,jdbcType=INTEGER},
+      userid = #{userid,jdbcType=INTEGER},
+      verifycode = #{verifycode,jdbcType=VARCHAR},
+      starttime = #{starttime,jdbcType=TIMESTAMP},
+      endtime = #{endtime,jdbcType=TIMESTAMP},
+      sensorid = #{sensorid,jdbcType=VARCHAR},
+      sn = #{sn,jdbcType=VARCHAR},
+      pictureurl = #{pictureurl,jdbcType=VARCHAR},
+      status = #{status,jdbcType=INTEGER},
+      del = #{del,jdbcType=BIT}
+    where id = #{id,jdbcType=INTEGER}
+      and schoolid = #{schoolid,jdbcType=INTEGER}
+  </update>
+</mapper>

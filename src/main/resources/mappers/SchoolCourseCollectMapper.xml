@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tianyuan.WisdomTeacherServer.mapper.SchoolCourseCollectMapper">
+  <resultMap id="BaseResultMap" type="com.tianyuan.WisdomTeacherServer.bean.SchoolCourseCollect">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="courseid" jdbcType="INTEGER" property="courseid" />
+    <result column="teacherid" jdbcType="INTEGER" property="teacherid" />
+    <result column="collectid" jdbcType="INTEGER" property="collectid" />
+    <result column="state" jdbcType="BIT" property="state" />
+    <result column="createtime" jdbcType="TIMESTAMP" property="createtime" />
+    <result column="updatetime" jdbcType="TIMESTAMP" property="updatetime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, courseid, teacherid, collectid, state, createtime, updatetime
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from school_course_collect
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from school_course_collect
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.tianyuan.WisdomTeacherServer.bean.SchoolCourseCollect">
+    insert into school_course_collect (id, courseid, teacherid, 
+      collectid, state, createtime, 
+      updatetime)
+    values (#{id,jdbcType=INTEGER}, #{courseid,jdbcType=INTEGER}, #{teacherid,jdbcType=INTEGER}, 
+      #{collectid,jdbcType=INTEGER}, #{state,jdbcType=BIT}, #{createtime,jdbcType=TIMESTAMP}, 
+      #{updatetime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.tianyuan.WisdomTeacherServer.bean.SchoolCourseCollect">
+    insert into school_course_collect
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="courseid != null">
+        courseid,
+      </if>
+      <if test="teacherid != null">
+        teacherid,
+      </if>
+      <if test="collectid != null">
+        collectid,
+      </if>
+      <if test="state != null">
+        state,
+      </if>
+      <if test="createtime != null">
+        createtime,
+      </if>
+      <if test="updatetime != null">
+        updatetime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="courseid != null">
+        #{courseid,jdbcType=INTEGER},
+      </if>
+      <if test="teacherid != null">
+        #{teacherid,jdbcType=INTEGER},
+      </if>
+      <if test="collectid != null">
+        #{collectid,jdbcType=INTEGER},
+      </if>
+      <if test="state != null">
+        #{state,jdbcType=BIT},
+      </if>
+      <if test="createtime != null">
+        #{createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updatetime != null">
+        #{updatetime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.tianyuan.WisdomTeacherServer.bean.SchoolCourseCollect">
+    update school_course_collect
+    <set>
+      <if test="courseid != null">
+        courseid = #{courseid,jdbcType=INTEGER},
+      </if>
+      <if test="teacherid != null">
+        teacherid = #{teacherid,jdbcType=INTEGER},
+      </if>
+      <if test="collectid != null">
+        collectid = #{collectid,jdbcType=INTEGER},
+      </if>
+      <if test="state != null">
+        state = #{state,jdbcType=BIT},
+      </if>
+      <if test="createtime != null">
+        createtime = #{createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updatetime != null">
+        updatetime = #{updatetime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.tianyuan.WisdomTeacherServer.bean.SchoolCourseCollect">
+    update school_course_collect
+    set courseid = #{courseid,jdbcType=INTEGER},
+      teacherid = #{teacherid,jdbcType=INTEGER},
+      collectid = #{collectid,jdbcType=INTEGER},
+      state = #{state,jdbcType=BIT},
+      createtime = #{createtime,jdbcType=TIMESTAMP},
+      updatetime = #{updatetime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>
