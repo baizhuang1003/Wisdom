@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.example.demo.mapper.SchoolRoleMapper">
-  <resultMap id="BaseResultMap" type="com.example.demo.bean.SchoolRole">
+<mapper namespace="com.tianyuan.WisdomTeacherServer.mapper.SchoolRoleMapper">
+  <resultMap id="BaseResultMap" type="com.tianyuan.WisdomTeacherServer.bean.SchoolRole">
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="name" jdbcType="INTEGER" property="name" />
     <result column="sort" jdbcType="INTEGER" property="sort" />
@@ -25,7 +25,7 @@
     delete from school_role
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.example.demo.bean.SchoolRole">
+  <insert id="insert" parameterType="com.tianyuan.WisdomTeacherServer.bean.SchoolRole">
     insert into school_role (id, name, sort, 
       remark, update_time, create_uid, 
       create_time, update_uid, del
@@ -35,7 +35,7 @@
       #{createTime,jdbcType=TIMESTAMP}, #{updateUid,jdbcType=INTEGER}, #{del,jdbcType=INTEGER}
       )
   </insert>
-  <insert id="insertSelective" parameterType="com.example.demo.bean.SchoolRole">
+  <insert id="insertSelective" parameterType="com.tianyuan.WisdomTeacherServer.bean.SchoolRole">
     insert into school_role
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -96,7 +96,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.example.demo.bean.SchoolRole">
+  <update id="updateByPrimaryKeySelective" parameterType="com.tianyuan.WisdomTeacherServer.bean.SchoolRole">
     update school_role
     <set>
       <if test="name != null">
@@ -126,7 +126,7 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.example.demo.bean.SchoolRole">
+  <update id="updateByPrimaryKey" parameterType="com.tianyuan.WisdomTeacherServer.bean.SchoolRole">
     update school_role
     set name = #{name,jdbcType=INTEGER},
       sort = #{sort,jdbcType=INTEGER},

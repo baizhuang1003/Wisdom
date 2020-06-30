@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.example.demo.mapper.TeacherNexusMapper">
-  <resultMap id="BaseResultMap" type="com.example.demo.bean.TeacherNexus">
+<mapper namespace="com.tianyuan.WisdomTeacherServer.mapper.TeacherNexusMapper">
+  <resultMap id="BaseResultMap" type="com.tianyuan.WisdomTeacherServer.bean.TeacherNexus">
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="dept_id" jdbcType="INTEGER" property="deptId" />
     <result column="job_id" jdbcType="INTEGER" property="jobId" />
@@ -30,7 +30,7 @@
     delete from teacher_nexus
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.example.demo.bean.TeacherNexus">
+  <insert id="insert" parameterType="com.tianyuan.WisdomTeacherServer.bean.TeacherNexus">
     insert into teacher_nexus (id, dept_id, job_id, 
       role_id, class_id, grade_id, 
       teacher_id, remark, update_time, 
@@ -42,7 +42,7 @@
       #{createUid,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, #{updateUid,jdbcType=INTEGER}, 
       #{del,jdbcType=INTEGER})
   </insert>
-  <insert id="insertSelective" parameterType="com.example.demo.bean.TeacherNexus">
+  <insert id="insertSelective" parameterType="com.tianyuan.WisdomTeacherServer.bean.TeacherNexus">
     insert into teacher_nexus
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -127,7 +127,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.example.demo.bean.TeacherNexus">
+  <update id="updateByPrimaryKeySelective" parameterType="com.tianyuan.WisdomTeacherServer.bean.TeacherNexus">
     update teacher_nexus
     <set>
       <if test="deptId != null">
@@ -169,7 +169,7 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.example.demo.bean.TeacherNexus">
+  <update id="updateByPrimaryKey" parameterType="com.tianyuan.WisdomTeacherServer.bean.TeacherNexus">
     update teacher_nexus
     set dept_id = #{deptId,jdbcType=INTEGER},
       job_id = #{jobId,jdbcType=INTEGER},

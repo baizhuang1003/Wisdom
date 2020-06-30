@@ -65,7 +65,6 @@
         <table tableName="grade_comment_hits" domainObjectName="GradeCommentHits" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" ></table>
         <table tableName="grade_dynameic_num" domainObjectName="GradeDynameicNum" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" ></table>
         <table tableName="grade_dynamic" domainObjectName="GradeDynamic" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" ></table>
-        <table tableName="guardion_info" domainObjectName="GuardionInfo" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" ></table>
         <table tableName="role_limits" domainObjectName="RoleLimits" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" ></table>
         <table tableName="school_attendance_record" domainObjectName="SchoolAttendanceRecord" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" ></table>
         <table tableName="school_class" domainObjectName="SchoolClass" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" ></table>
@@ -80,23 +79,42 @@
         <table tableName="school_dynamic" domainObjectName="SchoolDynamic" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" ></table>
         <table tableName="school_floor" domainObjectName="SchoolFloor" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" ></table>
         <table tableName="school_grade" domainObjectName="SchoolGrade" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" ></table>
-        <table tableName="school_info" domainObjectName="SchoolInfo" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" ></table>
         <table tableName="school_job" domainObjectName="SchoolJob" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" ></table>
         <table tableName="school_limits" domainObjectName="SchoolLimits" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" ></table>
         <table tableName="school_material" domainObjectName="SchoolMaterial" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" ></table>
         <table tableName="school_role" domainObjectName="SchoolRole" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" ></table>
-        <table tableName="school_student" domainObjectName="SchoolStudent" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" ></table>
         <table tableName="school_subject" domainObjectName="SchoolSubject" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" ></table>
         <table tableName="school_term" domainObjectName="SchoolTerm" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" ></table>
-        <table tableName="student_guardion" domainObjectName="StudentGuardion" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" ></table>
         <table tableName="student_leave" domainObjectName="StudentLeave" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" ></table>
         <table tableName="teacher_course" domainObjectName="TeacherCourse" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" ></table>
-        <table tableName="teacher_info" domainObjectName="TeacherInfo" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" ></table>
         <table tableName="teacher_nexus" domainObjectName="TeacherNexus" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" ></table>
-        <table tableName="region_province" domainObjectName="RegionProvince" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" ></table>
-        <table tableName="region_city" domainObjectName="RegionCity" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" ></table>
-        <table tableName="region_zone" domainObjectName="RegionZone" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" ></table>
-
+        <table tableName="region_city" domainObjectName="RegionCity" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" >
+            <columnOverride column="code" javaType="java.lang.String" jdbcType="VARCHAR" />
+            <columnOverride column="name" javaType="java.lang.String" jdbcType="VARCHAR" />
+            <columnOverride column="province" javaType="java.lang.String" jdbcType="VARCHAR" />
+            <columnOverride column="city" javaType="java.lang.String" jdbcType="VARCHAR" />
+            <columnOverride column="zone" javaType="java.lang.String" jdbcType="VARCHAR" />
+            <columnOverride column="town" javaType="java.lang.String" jdbcType="VARCHAR" />
+            <columnOverride column="village" javaType="java.lang.String" jdbcType="VARCHAR" />
+        </table>
+        <table tableName="region_province" domainObjectName="RegionProvince" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" >
+            <columnOverride column="code" javaType="java.lang.String" jdbcType="VARCHAR" />
+            <columnOverride column="name" javaType="java.lang.String" jdbcType="VARCHAR" />
+            <columnOverride column="province" javaType="java.lang.String" jdbcType="VARCHAR" />
+            <columnOverride column="city" javaType="java.lang.String" jdbcType="VARCHAR" />
+            <columnOverride column="zone" javaType="java.lang.String" jdbcType="VARCHAR" />
+            <columnOverride column="town" javaType="java.lang.String" jdbcType="VARCHAR" />
+            <columnOverride column="village" javaType="java.lang.String" jdbcType="VARCHAR" />
+        </table>
+        <table tableName="region_zone" domainObjectName="RegionZone" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" >
+            <columnOverride column="code" javaType="java.lang.String" jdbcType="VARCHAR" />
+            <columnOverride column="name" javaType="java.lang.String" jdbcType="VARCHAR" />
+            <columnOverride column="province" javaType="java.lang.String" jdbcType="VARCHAR" />
+            <columnOverride column="city" javaType="java.lang.String" jdbcType="VARCHAR" />
+            <columnOverride column="zone" javaType="java.lang.String" jdbcType="VARCHAR" />
+            <columnOverride column="town" javaType="java.lang.String" jdbcType="VARCHAR" />
+            <columnOverride column="village" javaType="java.lang.String" jdbcType="VARCHAR" />
+        </table>
     </context>
 
 

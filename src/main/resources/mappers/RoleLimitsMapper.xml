@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.example.demo.mapper.RoleLimitsMapper">
-  <resultMap id="BaseResultMap" type="com.example.demo.bean.RoleLimits">
+<mapper namespace="com.tianyuan.WisdomTeacherServer.mapper.RoleLimitsMapper">
+  <resultMap id="BaseResultMap" type="com.tianyuan.WisdomTeacherServer.bean.RoleLimits">
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="role_id" jdbcType="INTEGER" property="roleId" />
     <result column="limits_id" jdbcType="INTEGER" property="limitsId" />
@@ -26,7 +26,7 @@
     delete from role_limits
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.example.demo.bean.RoleLimits">
+  <insert id="insert" parameterType="com.tianyuan.WisdomTeacherServer.bean.RoleLimits">
     insert into role_limits (id, role_id, limits_id, 
       remark, update_time, create_uid, 
       create_time, update_uid, del
@@ -36,7 +36,7 @@
       #{createTime,jdbcType=TIMESTAMP}, #{updateUid,jdbcType=INTEGER}, #{del,jdbcType=INTEGER}
       )
   </insert>
-  <insert id="insertSelective" parameterType="com.example.demo.bean.RoleLimits">
+  <insert id="insertSelective" parameterType="com.tianyuan.WisdomTeacherServer.bean.RoleLimits">
     insert into role_limits
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -97,7 +97,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.example.demo.bean.RoleLimits">
+  <update id="updateByPrimaryKeySelective" parameterType="com.tianyuan.WisdomTeacherServer.bean.RoleLimits">
     update role_limits
     <set>
       <if test="roleId != null">
@@ -127,7 +127,7 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.example.demo.bean.RoleLimits">
+  <update id="updateByPrimaryKey" parameterType="com.tianyuan.WisdomTeacherServer.bean.RoleLimits">
     update role_limits
     set role_id = #{roleId,jdbcType=INTEGER},
       limits_id = #{limitsId,jdbcType=INTEGER},

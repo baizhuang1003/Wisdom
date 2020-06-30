@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.example.demo.mapper.CommonCommentHitsMapper">
-  <resultMap id="BaseResultMap" type="com.example.demo.bean.CommonCommentHits">
+<mapper namespace="com.tianyuan.WisdomTeacherServer.mapper.CommonCommentHitsMapper">
+  <resultMap id="BaseResultMap" type="com.tianyuan.WisdomTeacherServer.bean.CommonCommentHits">
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="dynamic_id" jdbcType="INTEGER" property="dynamicId" />
     <result column="user_id" jdbcType="INTEGER" property="userId" />
@@ -27,7 +27,7 @@
     delete from common_comment_hits
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.example.demo.bean.CommonCommentHits">
+  <insert id="insert" parameterType="com.tianyuan.WisdomTeacherServer.bean.CommonCommentHits">
     insert into common_comment_hits (id, dynamic_id, user_id, 
       state, remark, update_time, 
       create_uid, create_time, update_uid, 
@@ -37,7 +37,7 @@
       #{createUid,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, #{updateUid,jdbcType=INTEGER}, 
       #{del,jdbcType=INTEGER})
   </insert>
-  <insert id="insertSelective" parameterType="com.example.demo.bean.CommonCommentHits">
+  <insert id="insertSelective" parameterType="com.tianyuan.WisdomTeacherServer.bean.CommonCommentHits">
     insert into common_comment_hits
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -104,7 +104,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.example.demo.bean.CommonCommentHits">
+  <update id="updateByPrimaryKeySelective" parameterType="com.tianyuan.WisdomTeacherServer.bean.CommonCommentHits">
     update common_comment_hits
     <set>
       <if test="dynamicId != null">
@@ -137,7 +137,7 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.example.demo.bean.CommonCommentHits">
+  <update id="updateByPrimaryKey" parameterType="com.tianyuan.WisdomTeacherServer.bean.CommonCommentHits">
     update common_comment_hits
     set dynamic_id = #{dynamicId,jdbcType=INTEGER},
       user_id = #{userId,jdbcType=INTEGER},

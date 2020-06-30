@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.example.demo.mapper.SchoolSubjectMapper">
-  <resultMap id="BaseResultMap" type="com.example.demo.bean.SchoolSubject">
+<mapper namespace="com.tianyuan.WisdomTeacherServer.mapper.SchoolSubjectMapper">
+  <resultMap id="BaseResultMap" type="com.tianyuan.WisdomTeacherServer.bean.SchoolSubject">
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="term_id" jdbcType="INTEGER" property="termId" />
     <result column="grade_id" jdbcType="INTEGER" property="gradeId" />
@@ -28,7 +28,7 @@
     delete from school_subject
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.example.demo.bean.SchoolSubject">
+  <insert id="insert" parameterType="com.tianyuan.WisdomTeacherServer.bean.SchoolSubject">
     insert into school_subject (id, term_id, grade_id, 
       name, sort, remark, 
       update_time, create_uid, create_time, 
@@ -38,7 +38,7 @@
       #{updateTime,jdbcType=TIMESTAMP}, #{createUid,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, 
       #{updateUid,jdbcType=INTEGER}, #{del,jdbcType=INTEGER})
   </insert>
-  <insert id="insertSelective" parameterType="com.example.demo.bean.SchoolSubject">
+  <insert id="insertSelective" parameterType="com.tianyuan.WisdomTeacherServer.bean.SchoolSubject">
     insert into school_subject
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -111,7 +111,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.example.demo.bean.SchoolSubject">
+  <update id="updateByPrimaryKeySelective" parameterType="com.tianyuan.WisdomTeacherServer.bean.SchoolSubject">
     update school_subject
     <set>
       <if test="termId != null">
@@ -147,7 +147,7 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.example.demo.bean.SchoolSubject">
+  <update id="updateByPrimaryKey" parameterType="com.tianyuan.WisdomTeacherServer.bean.SchoolSubject">
     update school_subject
     set term_id = #{termId,jdbcType=INTEGER},
       grade_id = #{gradeId,jdbcType=INTEGER},

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.example.demo.mapper.SchoolTermMapper">
-  <resultMap id="BaseResultMap" type="com.example.demo.bean.SchoolTerm">
+<mapper namespace="com.tianyuan.WisdomTeacherServer.mapper.SchoolTermMapper">
+  <resultMap id="BaseResultMap" type="com.tianyuan.WisdomTeacherServer.bean.SchoolTerm">
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="name" jdbcType="VARCHAR" property="name" />
     <result column="star_date" jdbcType="VARCHAR" property="starDate" />
@@ -29,7 +29,7 @@
     delete from school_term
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.example.demo.bean.SchoolTerm">
+  <insert id="insert" parameterType="com.tianyuan.WisdomTeacherServer.bean.SchoolTerm">
     insert into school_term (id, name, star_date, 
       end_date, seesaw, sort, 
       remark, update_time, create_uid, 
@@ -41,7 +41,7 @@
       #{createTime,jdbcType=TIMESTAMP}, #{updateUid,jdbcType=INTEGER}, #{del,jdbcType=INTEGER}
       )
   </insert>
-  <insert id="insertSelective" parameterType="com.example.demo.bean.SchoolTerm">
+  <insert id="insertSelective" parameterType="com.tianyuan.WisdomTeacherServer.bean.SchoolTerm">
     insert into school_term
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -120,7 +120,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.example.demo.bean.SchoolTerm">
+  <update id="updateByPrimaryKeySelective" parameterType="com.tianyuan.WisdomTeacherServer.bean.SchoolTerm">
     update school_term
     <set>
       <if test="name != null">
@@ -159,7 +159,7 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.example.demo.bean.SchoolTerm">
+  <update id="updateByPrimaryKey" parameterType="com.tianyuan.WisdomTeacherServer.bean.SchoolTerm">
     update school_term
     set name = #{name,jdbcType=VARCHAR},
       star_date = #{starDate,jdbcType=VARCHAR},

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.example.demo.mapper.StudentLeaveMapper">
-  <resultMap id="BaseResultMap" type="com.example.demo.bean.StudentLeave">
+<mapper namespace="com.tianyuan.WisdomTeacherServer.mapper.StudentLeaveMapper">
+  <resultMap id="BaseResultMap" type="com.tianyuan.WisdomTeacherServer.bean.StudentLeave">
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="guardion_id" jdbcType="INTEGER" property="guardionId" />
     <result column="guardion_name" jdbcType="VARCHAR" property="guardionName" />
@@ -37,7 +37,7 @@
     delete from student_leave
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.example.demo.bean.StudentLeave">
+  <insert id="insert" parameterType="com.tianyuan.WisdomTeacherServer.bean.StudentLeave">
     insert into student_leave (id, guardion_id, guardion_name, 
       guardion_mobile, student_id, student_name, 
       teacher_id, teacher_name, type_id, 
@@ -53,7 +53,7 @@
       #{createUid,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, #{updateUid,jdbcType=INTEGER}, 
       #{del,jdbcType=INTEGER})
   </insert>
-  <insert id="insertSelective" parameterType="com.example.demo.bean.StudentLeave">
+  <insert id="insertSelective" parameterType="com.tianyuan.WisdomTeacherServer.bean.StudentLeave">
     insert into student_leave
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -174,7 +174,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.example.demo.bean.StudentLeave">
+  <update id="updateByPrimaryKeySelective" parameterType="com.tianyuan.WisdomTeacherServer.bean.StudentLeave">
     update student_leave
     <set>
       <if test="guardionId != null">
@@ -234,7 +234,7 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.example.demo.bean.StudentLeave">
+  <update id="updateByPrimaryKey" parameterType="com.tianyuan.WisdomTeacherServer.bean.StudentLeave">
     update student_leave
     set guardion_id = #{guardionId,jdbcType=INTEGER},
       guardion_name = #{guardionName,jdbcType=VARCHAR},

@@ -1,7 +1,5 @@
 package com.tianyuan.WisdomTeacherServer.service.impl;
 
-import com.tianyuan.WisdomTeacherServer.bean.RegionZone;
-import com.tianyuan.WisdomTeacherServer.mapper.RegionZoneMapper;
 import com.tianyuan.WisdomTeacherServer.service.ZoneService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

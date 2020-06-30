@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.example.demo.mapper.AttendanceMonthTotalMapper">
-  <resultMap id="BaseResultMap" type="com.example.demo.bean.AttendanceMonthTotal">
+<mapper namespace="com.tianyuan.WisdomTeacherServer.mapper.AttendanceMonthTotalMapper">
+  <resultMap id="BaseResultMap" type="com.tianyuan.WisdomTeacherServer.bean.AttendanceMonthTotal">
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="type" jdbcType="INTEGER" property="type" />
     <result column="teacher_id" jdbcType="INTEGER" property="teacherId" />
@@ -36,7 +36,7 @@
     delete from attendance_month_total
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.example.demo.bean.AttendanceMonthTotal">
+  <insert id="insert" parameterType="com.tianyuan.WisdomTeacherServer.bean.AttendanceMonthTotal">
     insert into attendance_month_total (id, type, teacher_id, 
       teacher_name, code, atten_year, 
       atten_mon, normal_num, late_num, 
@@ -52,7 +52,7 @@
       #{createTime,jdbcType=TIMESTAMP}, #{updateUid,jdbcType=INTEGER}, #{del,jdbcType=INTEGER}
       )
   </insert>
-  <insert id="insertSelective" parameterType="com.example.demo.bean.AttendanceMonthTotal">
+  <insert id="insertSelective" parameterType="com.tianyuan.WisdomTeacherServer.bean.AttendanceMonthTotal">
     insert into attendance_month_total
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -167,7 +167,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.example.demo.bean.AttendanceMonthTotal">
+  <update id="updateByPrimaryKeySelective" parameterType="com.tianyuan.WisdomTeacherServer.bean.AttendanceMonthTotal">
     update attendance_month_total
     <set>
       <if test="type != null">
@@ -224,7 +224,7 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.example.demo.bean.AttendanceMonthTotal">
+  <update id="updateByPrimaryKey" parameterType="com.tianyuan.WisdomTeacherServer.bean.AttendanceMonthTotal">
     update attendance_month_total
     set type = #{type,jdbcType=INTEGER},
       teacher_id = #{teacherId,jdbcType=INTEGER},

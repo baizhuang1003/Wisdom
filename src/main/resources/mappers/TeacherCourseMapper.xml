@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.example.demo.mapper.TeacherCourseMapper">
-  <resultMap id="BaseResultMap" type="com.example.demo.bean.TeacherCourse">
+<mapper namespace="com.tianyuan.WisdomTeacherServer.mapper.TeacherCourseMapper">
+  <resultMap id="BaseResultMap" type="com.tianyuan.WisdomTeacherServer.bean.TeacherCourse">
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="name" jdbcType="VARCHAR" property="name" />
     <result column="school_id" jdbcType="INTEGER" property="schoolId" />
@@ -33,7 +33,7 @@
     delete from teacher_course
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.example.demo.bean.TeacherCourse">
+  <insert id="insert" parameterType="com.tianyuan.WisdomTeacherServer.bean.TeacherCourse">
     insert into teacher_course (id, name, school_id, 
       teacher_id, material_id, type, 
       file_url, avatar, summary, 
@@ -47,7 +47,7 @@
       #{createUid,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, #{updateUid,jdbcType=INTEGER}, 
       #{del,jdbcType=INTEGER})
   </insert>
-  <insert id="insertSelective" parameterType="com.example.demo.bean.TeacherCourse">
+  <insert id="insertSelective" parameterType="com.tianyuan.WisdomTeacherServer.bean.TeacherCourse">
     insert into teacher_course
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -150,7 +150,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.example.demo.bean.TeacherCourse">
+  <update id="updateByPrimaryKeySelective" parameterType="com.tianyuan.WisdomTeacherServer.bean.TeacherCourse">
     update teacher_course
     <set>
       <if test="name != null">
@@ -201,7 +201,7 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.example.demo.bean.TeacherCourse">
+  <update id="updateByPrimaryKey" parameterType="com.tianyuan.WisdomTeacherServer.bean.TeacherCourse">
     update teacher_course
     set name = #{name,jdbcType=VARCHAR},
       school_id = #{schoolId,jdbcType=INTEGER},

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.example.demo.mapper.SchoolDynameicNumMapper">
-  <resultMap id="BaseResultMap" type="com.example.demo.bean.SchoolDynameicNum">
+<mapper namespace="com.tianyuan.WisdomTeacherServer.mapper.SchoolDynameicNumMapper">
+  <resultMap id="BaseResultMap" type="com.tianyuan.WisdomTeacherServer.bean.SchoolDynameicNum">
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="dynameic_id" jdbcType="INTEGER" property="dynameicId" />
     <result column="comment_num" jdbcType="INTEGER" property="commentNum" />
@@ -27,7 +27,7 @@
     delete from school_dynameic_num
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.example.demo.bean.SchoolDynameicNum">
+  <insert id="insert" parameterType="com.tianyuan.WisdomTeacherServer.bean.SchoolDynameicNum">
     insert into school_dynameic_num (id, dynameic_id, comment_num, 
       hits_num, remark, update_time, 
       create_uid, create_time, update_uid, 
@@ -37,7 +37,7 @@
       #{createUid,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, #{updateUid,jdbcType=INTEGER}, 
       #{del,jdbcType=INTEGER})
   </insert>
-  <insert id="insertSelective" parameterType="com.example.demo.bean.SchoolDynameicNum">
+  <insert id="insertSelective" parameterType="com.tianyuan.WisdomTeacherServer.bean.SchoolDynameicNum">
     insert into school_dynameic_num
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -104,7 +104,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.example.demo.bean.SchoolDynameicNum">
+  <update id="updateByPrimaryKeySelective" parameterType="com.tianyuan.WisdomTeacherServer.bean.SchoolDynameicNum">
     update school_dynameic_num
     <set>
       <if test="dynameicId != null">
@@ -137,7 +137,7 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.example.demo.bean.SchoolDynameicNum">
+  <update id="updateByPrimaryKey" parameterType="com.tianyuan.WisdomTeacherServer.bean.SchoolDynameicNum">
     update school_dynameic_num
     set dynameic_id = #{dynameicId,jdbcType=INTEGER},
       comment_num = #{commentNum,jdbcType=INTEGER},

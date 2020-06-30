@@ -1,4 +1,4 @@
-package com.example.demo.bean;
+package com.tianyuan.WisdomTeacherServer.bean;
 
 import java.io.Serializable;
 import java.util.Date;

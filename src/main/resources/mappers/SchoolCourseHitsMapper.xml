@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.example.demo.mapper.SchoolCourseHitsMapper">
-  <resultMap id="BaseResultMap" type="com.example.demo.bean.SchoolCourseHits">
+<mapper namespace="com.tianyuan.WisdomTeacherServer.mapper.SchoolCourseHitsMapper">
+  <resultMap id="BaseResultMap" type="com.tianyuan.WisdomTeacherServer.bean.SchoolCourseHits">
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="course_id" jdbcType="INTEGER" property="courseId" />
     <result column="teacher_id" jdbcType="INTEGER" property="teacherId" />
@@ -28,7 +28,7 @@
     delete from school_course_hits
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.example.demo.bean.SchoolCourseHits">
+  <insert id="insert" parameterType="com.tianyuan.WisdomTeacherServer.bean.SchoolCourseHits">
     insert into school_course_hits (id, course_id, teacher_id, 
       hit_id, state, remark, 
       update_time, create_uid, create_time, 
@@ -38,7 +38,7 @@
       #{updateTime,jdbcType=TIMESTAMP}, #{createUid,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, 
       #{updateUid,jdbcType=INTEGER}, #{del,jdbcType=INTEGER})
   </insert>
-  <insert id="insertSelective" parameterType="com.example.demo.bean.SchoolCourseHits">
+  <insert id="insertSelective" parameterType="com.tianyuan.WisdomTeacherServer.bean.SchoolCourseHits">
     insert into school_course_hits
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -111,7 +111,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.example.demo.bean.SchoolCourseHits">
+  <update id="updateByPrimaryKeySelective" parameterType="com.tianyuan.WisdomTeacherServer.bean.SchoolCourseHits">
     update school_course_hits
     <set>
       <if test="courseId != null">
@@ -147,7 +147,7 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.example.demo.bean.SchoolCourseHits">
+  <update id="updateByPrimaryKey" parameterType="com.tianyuan.WisdomTeacherServer.bean.SchoolCourseHits">
     update school_course_hits
     set course_id = #{courseId,jdbcType=INTEGER},
       teacher_id = #{teacherId,jdbcType=INTEGER},
