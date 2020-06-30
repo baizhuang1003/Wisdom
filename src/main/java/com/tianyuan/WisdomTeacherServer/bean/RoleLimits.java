@@ -1,13 +1,26 @@
-package com.tianyuan.WisdomTeacherServer.bean;
+package com.example.demo.bean;
 
 import java.io.Serializable;
+import java.util.Date;
 
 public class RoleLimits implements Serializable {
     private Integer id;
 
-    private Integer roleid;
+    private Integer roleId;
 
-    private Integer limitsid;
+    private Integer limitsId;
+
+    private String remark;
+
+    private Date updateTime;
+
+    private Integer createUid;
+
+    private Date createTime;
+
+    private Integer updateUid;
+
+    private Integer del;
 
     private static final long serialVersionUID = 1L;
 
@@ -19,19 +32,67 @@ public class RoleLimits implements Serializable {
         this.id = id;
     }
 
-    public Integer getRoleid() {
-        return roleid;
+    public Integer getRoleId() {
+        return roleId;
     }
 
-    public void setRoleid(Integer roleid) {
-        this.roleid = roleid;
+    public void setRoleId(Integer roleId) {
+        this.roleId = roleId;
     }
 
-    public Integer getLimitsid() {
-        return limitsid;
+    public Integer getLimitsId() {
+        return limitsId;
     }
 
-    public void setLimitsid(Integer limitsid) {
-        this.limitsid = limitsid;
+    public void setLimitsId(Integer limitsId) {
+        this.limitsId = limitsId;
+    }
+
+    public String getRemark() {
+        return remark;
+    }
+
+    public void setRemark(String remark) {
+        this.remark = remark == null ? null : remark.trim();
+    }
+
+    public Date getUpdateTime() {
+        return updateTime;
+    }
+
+    public void setUpdateTime(Date updateTime) {
+        this.updateTime = updateTime;
+    }
+
+    public Integer getCreateUid() {
+        return createUid;
+    }
+
+    public void setCreateUid(Integer createUid) {
+        this.createUid = createUid;
+    }
+
+    public Date getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
+    }
+
+    public Integer getUpdateUid() {
+        return updateUid;
+    }
+
+    public void setUpdateUid(Integer updateUid) {
+        this.updateUid = updateUid;
+    }
+
+    public Integer getDel() {
+        return del;
+    }
+
+    public void setDel(Integer del) {
+        this.del = del;
     }
 }

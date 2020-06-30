@@ -1,4 +1,4 @@
-package com.tianyuan.WisdomTeacherServer.bean;
+package com.example.demo.bean;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -6,29 +6,31 @@ import java.util.Date;
 public class SchoolMaterial implements Serializable {
     private Integer id;
 
-    private Integer termid;
+    private Integer termId;
 
-    private Integer subjectid;
+    private Integer subjectId;
 
-    private Integer gradeid;
+    private Integer gradeId;
 
     private String type;
 
     private String name;
 
-    private Integer parentid;
+    private Integer parentId;
 
     private Integer sort;
 
-    private Integer createuid;
+    private String remark;
 
-    private Date createtime;
+    private Date updateTime;
 
-    private Integer updateuid;
+    private Integer createUid;
 
-    private Date updatetime;
+    private Date createTime;
 
-    private Boolean del;
+    private Integer updateUid;
+
+    private Integer del;
 
     private static final long serialVersionUID = 1L;
 
@@ -40,28 +42,28 @@ public class SchoolMaterial implements Serializable {
         this.id = id;
     }
 
-    public Integer getTermid() {
-        return termid;
+    public Integer getTermId() {
+        return termId;
     }
 
-    public void setTermid(Integer termid) {
-        this.termid = termid;
+    public void setTermId(Integer termId) {
+        this.termId = termId;
     }
 
-    public Integer getSubjectid() {
-        return subjectid;
+    public Integer getSubjectId() {
+        return subjectId;
     }
 
-    public void setSubjectid(Integer subjectid) {
-        this.subjectid = subjectid;
+    public void setSubjectId(Integer subjectId) {
+        this.subjectId = subjectId;
     }
 
-    public Integer getGradeid() {
-        return gradeid;
+    public Integer getGradeId() {
+        return gradeId;
     }
 
-    public void setGradeid(Integer gradeid) {
-        this.gradeid = gradeid;
+    public void setGradeId(Integer gradeId) {
+        this.gradeId = gradeId;
     }
 
     public String getType() {
@@ -80,12 +82,12 @@ public class SchoolMaterial implements Serializable {
         this.name = name == null ? null : name.trim();
     }
 
-    public Integer getParentid() {
-        return parentid;
+    public Integer getParentId() {
+        return parentId;
     }
 
-    public void setParentid(Integer parentid) {
-        this.parentid = parentid;
+    public void setParentId(Integer parentId) {
+        this.parentId = parentId;
     }
 
     public Integer getSort() {
@@ -96,43 +98,51 @@ public class SchoolMaterial implements Serializable {
         this.sort = sort;
     }
 
-    public Integer getCreateuid() {
-        return createuid;
+    public String getRemark() {
+        return remark;
     }
 
-    public void setCreateuid(Integer createuid) {
-        this.createuid = createuid;
+    public void setRemark(String remark) {
+        this.remark = remark == null ? null : remark.trim();
     }
 
-    public Date getCreatetime() {
-        return createtime;
+    public Date getUpdateTime() {
+        return updateTime;
     }
 
-    public void setCreatetime(Date createtime) {
-        this.createtime = createtime;
+    public void setUpdateTime(Date updateTime) {
+        this.updateTime = updateTime;
     }
 
-    public Integer getUpdateuid() {
-        return updateuid;
+    public Integer getCreateUid() {
+        return createUid;
     }
 
-    public void setUpdateuid(Integer updateuid) {
-        this.updateuid = updateuid;
+    public void setCreateUid(Integer createUid) {
+        this.createUid = createUid;
     }
 
-    public Date getUpdatetime() {
-        return updatetime;
+    public Date getCreateTime() {
+        return createTime;
     }
 
-    public void setUpdatetime(Date updatetime) {
-        this.updatetime = updatetime;
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
     }
 
-    public Boolean getDel() {
+    public Integer getUpdateUid() {
+        return updateUid;
+    }
+
+    public void setUpdateUid(Integer updateUid) {
+        this.updateUid = updateUid;
+    }
+
+    public Integer getDel() {
         return del;
     }
 
-    public void setDel(Boolean del) {
+    public void setDel(Integer del) {
         this.del = del;
     }
 }

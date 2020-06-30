@@ -1,131 +1,143 @@
-package com.tianyuan.WisdomTeacherServer.bean;
+package com.example.demo.bean;
 
 import java.io.Serializable;
 import java.util.Date;
 
-public class StudentLeave extends StudentLeaveKey implements Serializable {
-    private Integer guardionid;
+public class StudentLeave implements Serializable {
+    private Integer id;
 
-    private String guardionname;
+    private Integer guardionId;
 
-    private String guardionmobile;
+    private String guardionName;
 
-    private Integer studentid;
+    private String guardionMobile;
 
-    private String studentname;
+    private Integer studentId;
 
-    private Integer teacherid;
+    private String studentName;
 
-    private String teachername;
+    private Integer teacherId;
 
-    private Integer typeid;
+    private String teacherName;
 
-    private String typename;
+    private Integer typeId;
 
-    private Date starttime;
+    private String typeName;
 
-    private Date endtime;
+    private Date startTime;
+
+    private Date endTime;
 
     private Integer status;
 
-    private Date updatetime;
+    private String remark;
 
-    private Integer createuid;
+    private Date updateTime;
 
-    private Date createtime;
+    private Integer createUid;
 
-    private Integer updateuid;
+    private Date createTime;
 
-    private Boolean del;
+    private Integer updateUid;
+
+    private Integer del;
 
     private static final long serialVersionUID = 1L;
 
-    public Integer getGuardionid() {
-        return guardionid;
+    public Integer getId() {
+        return id;
     }
 
-    public void setGuardionid(Integer guardionid) {
-        this.guardionid = guardionid;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
-    public String getGuardionname() {
-        return guardionname;
+    public Integer getGuardionId() {
+        return guardionId;
     }
 
-    public void setGuardionname(String guardionname) {
-        this.guardionname = guardionname == null ? null : guardionname.trim();
+    public void setGuardionId(Integer guardionId) {
+        this.guardionId = guardionId;
     }
 
-    public String getGuardionmobile() {
-        return guardionmobile;
+    public String getGuardionName() {
+        return guardionName;
     }
 
-    public void setGuardionmobile(String guardionmobile) {
-        this.guardionmobile = guardionmobile == null ? null : guardionmobile.trim();
+    public void setGuardionName(String guardionName) {
+        this.guardionName = guardionName == null ? null : guardionName.trim();
     }
 
-    public Integer getStudentid() {
-        return studentid;
+    public String getGuardionMobile() {
+        return guardionMobile;
     }
 
-    public void setStudentid(Integer studentid) {
-        this.studentid = studentid;
+    public void setGuardionMobile(String guardionMobile) {
+        this.guardionMobile = guardionMobile == null ? null : guardionMobile.trim();
     }
 
-    public String getStudentname() {
-        return studentname;
+    public Integer getStudentId() {
+        return studentId;
     }
 
-    public void setStudentname(String studentname) {
-        this.studentname = studentname == null ? null : studentname.trim();
+    public void setStudentId(Integer studentId) {
+        this.studentId = studentId;
     }
 
-    public Integer getTeacherid() {
-        return teacherid;
+    public String getStudentName() {
+        return studentName;
     }
 
-    public void setTeacherid(Integer teacherid) {
-        this.teacherid = teacherid;
+    public void setStudentName(String studentName) {
+        this.studentName = studentName == null ? null : studentName.trim();
     }
 
-    public String getTeachername() {
-        return teachername;
+    public Integer getTeacherId() {
+        return teacherId;
     }
 
-    public void setTeachername(String teachername) {
-        this.teachername = teachername == null ? null : teachername.trim();
+    public void setTeacherId(Integer teacherId) {
+        this.teacherId = teacherId;
     }
 
-    public Integer getTypeid() {
-        return typeid;
+    public String getTeacherName() {
+        return teacherName;
     }
 
-    public void setTypeid(Integer typeid) {
-        this.typeid = typeid;
+    public void setTeacherName(String teacherName) {
+        this.teacherName = teacherName == null ? null : teacherName.trim();
     }
 
-    public String getTypename() {
-        return typename;
+    public Integer getTypeId() {
+        return typeId;
     }
 
-    public void setTypename(String typename) {
-        this.typename = typename == null ? null : typename.trim();
+    public void setTypeId(Integer typeId) {
+        this.typeId = typeId;
     }
 
-    public Date getStarttime() {
-        return starttime;
+    public String getTypeName() {
+        return typeName;
     }
 
-    public void setStarttime(Date starttime) {
-        this.starttime = starttime;
+    public void setTypeName(String typeName) {
+        this.typeName = typeName == null ? null : typeName.trim();
     }
 
-    public Date getEndtime() {
-        return endtime;
+    public Date getStartTime() {
+        return startTime;
     }
 
-    public void setEndtime(Date endtime) {
-        this.endtime = endtime;
+    public void setStartTime(Date startTime) {
+        this.startTime = startTime;
+    }
+
+    public Date getEndTime() {
+        return endTime;
+    }
+
+    public void setEndTime(Date endTime) {
+        this.endTime = endTime;
     }
 
     public Integer getStatus() {
@@ -136,43 +148,51 @@ public class StudentLeave extends StudentLeaveKey implements Serializable {
         this.status = status;
     }
 
-    public Date getUpdatetime() {
-        return updatetime;
+    public String getRemark() {
+        return remark;
     }
 
-    public void setUpdatetime(Date updatetime) {
-        this.updatetime = updatetime;
+    public void setRemark(String remark) {
+        this.remark = remark == null ? null : remark.trim();
     }
 
-    public Integer getCreateuid() {
-        return createuid;
+    public Date getUpdateTime() {
+        return updateTime;
     }
 
-    public void setCreateuid(Integer createuid) {
-        this.createuid = createuid;
+    public void setUpdateTime(Date updateTime) {
+        this.updateTime = updateTime;
     }
 
-    public Date getCreatetime() {
-        return createtime;
+    public Integer getCreateUid() {
+        return createUid;
     }
 
-    public void setCreatetime(Date createtime) {
-        this.createtime = createtime;
+    public void setCreateUid(Integer createUid) {
+        this.createUid = createUid;
     }
 
-    public Integer getUpdateuid() {
-        return updateuid;
+    public Date getCreateTime() {
+        return createTime;
     }
 
-    public void setUpdateuid(Integer updateuid) {
-        this.updateuid = updateuid;
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
     }
 
-    public Boolean getDel() {
+    public Integer getUpdateUid() {
+        return updateUid;
+    }
+
+    public void setUpdateUid(Integer updateUid) {
+        this.updateUid = updateUid;
+    }
+
+    public Integer getDel() {
         return del;
     }
 
-    public void setDel(Boolean del) {
+    public void setDel(Integer del) {
         this.del = del;
     }
 }

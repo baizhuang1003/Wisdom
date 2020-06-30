@@ -6,6 +6,8 @@ import com.tianyuan.WisdomTeacherServer.service.ClassService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class ClassServiceImpl implements ClassService {
 
@@ -41,5 +43,15 @@ public class ClassServiceImpl implements ClassService {
         } else {
             return false;
         }
+    }
+
+    @Override
+    public List<SchoolClass> findAll() {
+        return null;
+    }
+
+    @Override
+    public Integer countItem() {
+        return null;
     }
 }

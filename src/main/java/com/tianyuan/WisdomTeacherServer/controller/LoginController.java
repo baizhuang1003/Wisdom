@@ -56,8 +56,8 @@ public class LoginController {
     @GetMapping("/searchSchoolStudents/{currentPage}/{pageSize}")
     public PageBean<SchoolStudent> searchSchoolStudents(@PathVariable("currentPage") String currentPage, @PathVariable("pageSize") String pageSize) {
         PageHelper.startPage(Integer.parseInt(currentPage), Integer.parseInt(pageSize));
-        List<SchoolStudent> allItems = userService.findAll();        //全部商品
-        int countNums = userService.countItem();            //总记录数
+        List<SchoolStudent> allItems = userService.findAll();
+        int countNums = userService.countItem();
         PageBean<SchoolStudent> pageData = new PageBean<>(Integer.parseInt(currentPage), Integer.parseInt(pageSize), countNums);
         pageData.setItems(allItems);
         return pageData;

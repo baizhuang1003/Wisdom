@@ -1,38 +1,53 @@
-package com.tianyuan.WisdomTeacherServer.bean;
+package com.example.demo.bean;
 
 import java.io.Serializable;
+import java.util.Date;
 
 public class AttendanceMonthTotal implements Serializable {
-    private Integer teacherid;
+    private Integer id;
 
     private Integer type;
 
-    private String teachername;
+    private Integer teacherId;
+
+    private String teacherName;
 
     private String code;
 
-    private String attenyear;
+    private Integer attenYear;
 
-    private String attenmon;
+    private Integer attenMon;
 
-    private Integer normalnum;
+    private Integer normalNum;
 
-    private Integer latenum;
+    private Integer lateNum;
 
-    private Integer awaynum;
+    private Integer awayNum;
 
-    private Integer lessnum;
+    private Integer lessNum;
 
-    private Integer deptid;
+    private Integer deptId;
+
+    private String remark;
+
+    private Date updateTime;
+
+    private Integer createUid;
+
+    private Date createTime;
+
+    private Integer updateUid;
+
+    private Integer del;
 
     private static final long serialVersionUID = 1L;
 
-    public Integer getTeacherid() {
-        return teacherid;
+    public Integer getId() {
+        return id;
     }
 
-    public void setTeacherid(Integer teacherid) {
-        this.teacherid = teacherid;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public Integer getType() {
@@ -43,12 +58,20 @@ public class AttendanceMonthTotal implements Serializable {
         this.type = type;
     }
 
-    public String getTeachername() {
-        return teachername;
+    public Integer getTeacherId() {
+        return teacherId;
     }
 
-    public void setTeachername(String teachername) {
-        this.teachername = teachername == null ? null : teachername.trim();
+    public void setTeacherId(Integer teacherId) {
+        this.teacherId = teacherId;
+    }
+
+    public String getTeacherName() {
+        return teacherName;
+    }
+
+    public void setTeacherName(String teacherName) {
+        this.teacherName = teacherName == null ? null : teacherName.trim();
     }
 
     public String getCode() {
@@ -59,59 +82,107 @@ public class AttendanceMonthTotal implements Serializable {
         this.code = code == null ? null : code.trim();
     }
 
-    public String getAttenyear() {
-        return attenyear;
+    public Integer getAttenYear() {
+        return attenYear;
     }
 
-    public void setAttenyear(String attenyear) {
-        this.attenyear = attenyear == null ? null : attenyear.trim();
+    public void setAttenYear(Integer attenYear) {
+        this.attenYear = attenYear;
     }
 
-    public String getAttenmon() {
-        return attenmon;
+    public Integer getAttenMon() {
+        return attenMon;
     }
 
-    public void setAttenmon(String attenmon) {
-        this.attenmon = attenmon == null ? null : attenmon.trim();
+    public void setAttenMon(Integer attenMon) {
+        this.attenMon = attenMon;
     }
 
-    public Integer getNormalnum() {
-        return normalnum;
+    public Integer getNormalNum() {
+        return normalNum;
     }
 
-    public void setNormalnum(Integer normalnum) {
-        this.normalnum = normalnum;
+    public void setNormalNum(Integer normalNum) {
+        this.normalNum = normalNum;
     }
 
-    public Integer getLatenum() {
-        return latenum;
+    public Integer getLateNum() {
+        return lateNum;
     }
 
-    public void setLatenum(Integer latenum) {
-        this.latenum = latenum;
+    public void setLateNum(Integer lateNum) {
+        this.lateNum = lateNum;
     }
 
-    public Integer getAwaynum() {
-        return awaynum;
+    public Integer getAwayNum() {
+        return awayNum;
     }
 
-    public void setAwaynum(Integer awaynum) {
-        this.awaynum = awaynum;
+    public void setAwayNum(Integer awayNum) {
+        this.awayNum = awayNum;
     }
 
-    public Integer getLessnum() {
-        return lessnum;
+    public Integer getLessNum() {
+        return lessNum;
     }
 
-    public void setLessnum(Integer lessnum) {
-        this.lessnum = lessnum;
+    public void setLessNum(Integer lessNum) {
+        this.lessNum = lessNum;
     }
 
-    public Integer getDeptid() {
-        return deptid;
+    public Integer getDeptId() {
+        return deptId;
     }
 
-    public void setDeptid(Integer deptid) {
-        this.deptid = deptid;
+    public void setDeptId(Integer deptId) {
+        this.deptId = deptId;
+    }
+
+    public String getRemark() {
+        return remark;
+    }
+
+    public void setRemark(String remark) {
+        this.remark = remark == null ? null : remark.trim();
+    }
+
+    public Date getUpdateTime() {
+        return updateTime;
+    }
+
+    public void setUpdateTime(Date updateTime) {
+        this.updateTime = updateTime;
+    }
+
+    public Integer getCreateUid() {
+        return createUid;
+    }
+
+    public void setCreateUid(Integer createUid) {
+        this.createUid = createUid;
+    }
+
+    public Date getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
+    }
+
+    public Integer getUpdateUid() {
+        return updateUid;
+    }
+
+    public void setUpdateUid(Integer updateUid) {
+        this.updateUid = updateUid;
+    }
+
+    public Integer getDel() {
+        return del;
+    }
+
+    public void setDel(Integer del) {
+        this.del = del;
     }
 }

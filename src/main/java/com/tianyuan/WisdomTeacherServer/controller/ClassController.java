@@ -35,4 +35,5 @@ public class ClassController {
         boolean b = classService.deleteClass(id);
         return b;
     }
+
 }

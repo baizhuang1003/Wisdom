@@ -6,6 +6,8 @@ import com.tianyuan.WisdomTeacherServer.service.DeptService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 
 @Service
 public class DeptServiceImpl implements DeptService {
@@ -43,5 +45,15 @@ public class DeptServiceImpl implements DeptService {
         }else {
             return false;
         }
+    }
+
+    @Override
+    public List<SchoolDept> findAll() {
+        return null;
+    }
+
+    @Override
+    public Integer countItem() {
+        return null;
     }
 }

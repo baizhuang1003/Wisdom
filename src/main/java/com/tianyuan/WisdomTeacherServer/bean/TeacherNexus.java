@@ -1,78 +1,138 @@
-package com.tianyuan.WisdomTeacherServer.bean;
+package com.example.demo.bean;
 
 import java.io.Serializable;
 import java.util.Date;
 
-public class TeacherNexus extends TeacherNexusKey implements Serializable {
-    private Integer classid;
+public class TeacherNexus implements Serializable {
+    private Integer id;
 
-    private Integer gradeid;
+    private Integer deptId;
 
-    private Integer createuid;
+    private Integer jobId;
 
-    private Date createtime;
+    private Integer roleId;
 
-    private Integer updateuid;
+    private Integer classId;
 
-    private Date updatetime;
+    private Integer gradeId;
 
-    private Boolean del;
+    private Integer teacherId;
+
+    private String remark;
+
+    private Date updateTime;
+
+    private Integer createUid;
+
+    private Date createTime;
+
+    private Integer updateUid;
+
+    private Integer del;
 
     private static final long serialVersionUID = 1L;
 
-    public Integer getClassid() {
-        return classid;
+    public Integer getId() {
+        return id;
     }
 
-    public void setClassid(Integer classid) {
-        this.classid = classid;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
-    public Integer getGradeid() {
-        return gradeid;
+    public Integer getDeptId() {
+        return deptId;
     }
 
-    public void setGradeid(Integer gradeid) {
-        this.gradeid = gradeid;
+    public void setDeptId(Integer deptId) {
+        this.deptId = deptId;
     }
 
-    public Integer getCreateuid() {
-        return createuid;
+    public Integer getJobId() {
+        return jobId;
     }
 
-    public void setCreateuid(Integer createuid) {
-        this.createuid = createuid;
+    public void setJobId(Integer jobId) {
+        this.jobId = jobId;
     }
 
-    public Date getCreatetime() {
-        return createtime;
+    public Integer getRoleId() {
+        return roleId;
     }
 
-    public void setCreatetime(Date createtime) {
-        this.createtime = createtime;
+    public void setRoleId(Integer roleId) {
+        this.roleId = roleId;
     }
 
-    public Integer getUpdateuid() {
-        return updateuid;
+    public Integer getClassId() {
+        return classId;
     }
 
-    public void setUpdateuid(Integer updateuid) {
-        this.updateuid = updateuid;
+    public void setClassId(Integer classId) {
+        this.classId = classId;
     }
 
-    public Date getUpdatetime() {
-        return updatetime;
+    public Integer getGradeId() {
+        return gradeId;
     }
 
-    public void setUpdatetime(Date updatetime) {
-        this.updatetime = updatetime;
+    public void setGradeId(Integer gradeId) {
+        this.gradeId = gradeId;
     }
 
-    public Boolean getDel() {
+    public Integer getTeacherId() {
+        return teacherId;
+    }
+
+    public void setTeacherId(Integer teacherId) {
+        this.teacherId = teacherId;
+    }
+
+    public String getRemark() {
+        return remark;
+    }
+
+    public void setRemark(String remark) {
+        this.remark = remark == null ? null : remark.trim();
+    }
+
+    public Date getUpdateTime() {
+        return updateTime;
+    }
+
+    public void setUpdateTime(Date updateTime) {
+        this.updateTime = updateTime;
+    }
+
+    public Integer getCreateUid() {
+        return createUid;
+    }
+
+    public void setCreateUid(Integer createUid) {
+        this.createUid = createUid;
+    }
+
+    public Date getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
+    }
+
+    public Integer getUpdateUid() {
+        return updateUid;
+    }
+
+    public void setUpdateUid(Integer updateUid) {
+        this.updateUid = updateUid;
+    }
+
+    public Integer getDel() {
         return del;
     }
 
-    public void setDel(Boolean del) {
+    public void setDel(Integer del) {
         this.del = del;
     }
 }

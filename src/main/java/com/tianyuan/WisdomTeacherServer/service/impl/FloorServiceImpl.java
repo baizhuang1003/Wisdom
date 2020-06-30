@@ -7,19 +7,17 @@ import com.tianyuan.WisdomTeacherServer.service.FloorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class FloorServiceImpl implements FloorService {
 
     @Autowired
     private SchoolFloorMapper schoolFloorMapper;
 
-    public SchoolFloor searchFloor() {
-        SchoolFloor SchoolFloor = schoolFloorMapper.selectByPrimaryKey(1);
-        return SchoolFloor;
-    }
 
     @Override
-    public SchoolFloor searchClass() {
+    public SchoolFloor searchFloor() {
         return null;
     }
 
@@ -44,6 +42,16 @@ public class FloorServiceImpl implements FloorService {
     @Override
     public boolean deleteFloor(Integer id) {
         return false;
+    }
+
+    @Override
+    public List<SchoolFloor> findAll() {
+        return null;
+    }
+
+    @Override
+    public Integer countItem() {
+        return null;
     }
 
     public boolean deleteFloor(SchoolFloorKey key) {

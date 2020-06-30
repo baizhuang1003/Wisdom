@@ -1,15 +1,28 @@
-package com.tianyuan.WisdomTeacherServer.bean;
+package com.example.demo.bean;
 
 import java.io.Serializable;
+import java.util.Date;
 
 public class CourseNum implements Serializable {
     private Integer id;
 
-    private Integer courseid;
+    private Integer courseId;
 
-    private Integer collectnum;
+    private Integer collectNum;
 
-    private Integer hitsnum;
+    private Integer hitsNum;
+
+    private String remark;
+
+    private Date updateTime;
+
+    private Integer createUid;
+
+    private Date createTime;
+
+    private Integer updateUid;
+
+    private Integer del;
 
     private static final long serialVersionUID = 1L;
 
@@ -21,27 +34,75 @@ public class CourseNum implements Serializable {
         this.id = id;
     }
 
-    public Integer getCourseid() {
-        return courseid;
+    public Integer getCourseId() {
+        return courseId;
     }
 
-    public void setCourseid(Integer courseid) {
-        this.courseid = courseid;
+    public void setCourseId(Integer courseId) {
+        this.courseId = courseId;
     }
 
-    public Integer getCollectnum() {
-        return collectnum;
+    public Integer getCollectNum() {
+        return collectNum;
     }
 
-    public void setCollectnum(Integer collectnum) {
-        this.collectnum = collectnum;
+    public void setCollectNum(Integer collectNum) {
+        this.collectNum = collectNum;
     }
 
-    public Integer getHitsnum() {
-        return hitsnum;
+    public Integer getHitsNum() {
+        return hitsNum;
     }
 
-    public void setHitsnum(Integer hitsnum) {
-        this.hitsnum = hitsnum;
+    public void setHitsNum(Integer hitsNum) {
+        this.hitsNum = hitsNum;
+    }
+
+    public String getRemark() {
+        return remark;
+    }
+
+    public void setRemark(String remark) {
+        this.remark = remark == null ? null : remark.trim();
+    }
+
+    public Date getUpdateTime() {
+        return updateTime;
+    }
+
+    public void setUpdateTime(Date updateTime) {
+        this.updateTime = updateTime;
+    }
+
+    public Integer getCreateUid() {
+        return createUid;
+    }
+
+    public void setCreateUid(Integer createUid) {
+        this.createUid = createUid;
+    }
+
+    public Date getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
+    }
+
+    public Integer getUpdateUid() {
+        return updateUid;
+    }
+
+    public void setUpdateUid(Integer updateUid) {
+        this.updateUid = updateUid;
+    }
+
+    public Integer getDel() {
+        return del;
+    }
+
+    public void setDel(Integer del) {
+        this.del = del;
     }
 }

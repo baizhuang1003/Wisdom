@@ -1,40 +1,55 @@
-package com.tianyuan.WisdomTeacherServer.bean;
+package com.example.demo.bean;
 
 import java.io.Serializable;
+import java.util.Date;
 
 public class AttendanceWeeekTotal implements Serializable {
-    private Integer teacherid;
+    private Integer id;
 
     private Integer type;
 
-    private String teachername;
+    private Integer teacherId;
 
-    private Integer deptid;
+    private String teacherName;
 
-    private Integer attenyear;
+    private Integer deptId;
 
     private String code;
 
-    private Integer attenmon;
+    private Integer attenYear;
 
-    private Integer weeknum;
+    private Integer attenMon;
 
-    private Integer normalnum;
+    private Integer weekNum;
 
-    private Integer latenum;
+    private Integer normalNum;
 
-    private Integer awaynum;
+    private Integer lateNum;
 
-    private Integer lessnum;
+    private Integer awayNum;
+
+    private Integer lessNum;
+
+    private String remark;
+
+    private Date updateTime;
+
+    private Integer createUid;
+
+    private Date createTime;
+
+    private Integer updateUid;
+
+    private Integer del;
 
     private static final long serialVersionUID = 1L;
 
-    public Integer getTeacherid() {
-        return teacherid;
+    public Integer getId() {
+        return id;
     }
 
-    public void setTeacherid(Integer teacherid) {
-        this.teacherid = teacherid;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public Integer getType() {
@@ -45,28 +60,28 @@ public class AttendanceWeeekTotal implements Serializable {
         this.type = type;
     }
 
-    public String getTeachername() {
-        return teachername;
+    public Integer getTeacherId() {
+        return teacherId;
     }
 
-    public void setTeachername(String teachername) {
-        this.teachername = teachername == null ? null : teachername.trim();
+    public void setTeacherId(Integer teacherId) {
+        this.teacherId = teacherId;
     }
 
-    public Integer getDeptid() {
-        return deptid;
+    public String getTeacherName() {
+        return teacherName;
     }
 
-    public void setDeptid(Integer deptid) {
-        this.deptid = deptid;
+    public void setTeacherName(String teacherName) {
+        this.teacherName = teacherName == null ? null : teacherName.trim();
     }
 
-    public Integer getAttenyear() {
-        return attenyear;
+    public Integer getDeptId() {
+        return deptId;
     }
 
-    public void setAttenyear(Integer attenyear) {
-        this.attenyear = attenyear;
+    public void setDeptId(Integer deptId) {
+        this.deptId = deptId;
     }
 
     public String getCode() {
@@ -77,51 +92,107 @@ public class AttendanceWeeekTotal implements Serializable {
         this.code = code == null ? null : code.trim();
     }
 
-    public Integer getAttenmon() {
-        return attenmon;
+    public Integer getAttenYear() {
+        return attenYear;
     }
 
-    public void setAttenmon(Integer attenmon) {
-        this.attenmon = attenmon;
+    public void setAttenYear(Integer attenYear) {
+        this.attenYear = attenYear;
     }
 
-    public Integer getWeeknum() {
-        return weeknum;
+    public Integer getAttenMon() {
+        return attenMon;
     }
 
-    public void setWeeknum(Integer weeknum) {
-        this.weeknum = weeknum;
+    public void setAttenMon(Integer attenMon) {
+        this.attenMon = attenMon;
     }
 
-    public Integer getNormalnum() {
-        return normalnum;
+    public Integer getWeekNum() {
+        return weekNum;
     }
 
-    public void setNormalnum(Integer normalnum) {
-        this.normalnum = normalnum;
+    public void setWeekNum(Integer weekNum) {
+        this.weekNum = weekNum;
     }
 
-    public Integer getLatenum() {
-        return latenum;
+    public Integer getNormalNum() {
+        return normalNum;
     }
 
-    public void setLatenum(Integer latenum) {
-        this.latenum = latenum;
+    public void setNormalNum(Integer normalNum) {
+        this.normalNum = normalNum;
     }
 
-    public Integer getAwaynum() {
-        return awaynum;
+    public Integer getLateNum() {
+        return lateNum;
     }
 
-    public void setAwaynum(Integer awaynum) {
-        this.awaynum = awaynum;
+    public void setLateNum(Integer lateNum) {
+        this.lateNum = lateNum;
     }
 
-    public Integer getLessnum() {
-        return lessnum;
+    public Integer getAwayNum() {
+        return awayNum;
     }
 
-    public void setLessnum(Integer lessnum) {
-        this.lessnum = lessnum;
+    public void setAwayNum(Integer awayNum) {
+        this.awayNum = awayNum;
+    }
+
+    public Integer getLessNum() {
+        return lessNum;
+    }
+
+    public void setLessNum(Integer lessNum) {
+        this.lessNum = lessNum;
+    }
+
+    public String getRemark() {
+        return remark;
+    }
+
+    public void setRemark(String remark) {
+        this.remark = remark == null ? null : remark.trim();
+    }
+
+    public Date getUpdateTime() {
+        return updateTime;
+    }
+
+    public void setUpdateTime(Date updateTime) {
+        this.updateTime = updateTime;
+    }
+
+    public Integer getCreateUid() {
+        return createUid;
+    }
+
+    public void setCreateUid(Integer createUid) {
+        this.createUid = createUid;
+    }
+
+    public Date getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
+    }
+
+    public Integer getUpdateUid() {
+        return updateUid;
+    }
+
+    public void setUpdateUid(Integer updateUid) {
+        this.updateUid = updateUid;
+    }
+
+    public Integer getDel() {
+        return del;
+    }
+
+    public void setDel(Integer del) {
+        this.del = del;
     }
 }

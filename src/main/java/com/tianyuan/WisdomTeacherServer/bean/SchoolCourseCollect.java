@@ -1,4 +1,4 @@
-package com.tianyuan.WisdomTeacherServer.bean;
+package com.example.demo.bean;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -6,17 +6,25 @@ import java.util.Date;
 public class SchoolCourseCollect implements Serializable {
     private Integer id;
 
-    private Integer courseid;
+    private Integer courseId;
 
-    private Integer teacherid;
+    private Integer teacherId;
 
-    private Integer collectid;
+    private Integer collectId;
 
-    private Boolean state;
+    private Integer state;
 
-    private Date createtime;
+    private String remark;
 
-    private Date updatetime;
+    private Date updateTime;
+
+    private Integer createUid;
+
+    private Date createTime;
+
+    private Integer updateUid;
+
+    private Integer del;
 
     private static final long serialVersionUID = 1L;
 
@@ -28,51 +36,83 @@ public class SchoolCourseCollect implements Serializable {
         this.id = id;
     }
 
-    public Integer getCourseid() {
-        return courseid;
+    public Integer getCourseId() {
+        return courseId;
     }
 
-    public void setCourseid(Integer courseid) {
-        this.courseid = courseid;
+    public void setCourseId(Integer courseId) {
+        this.courseId = courseId;
     }
 
-    public Integer getTeacherid() {
-        return teacherid;
+    public Integer getTeacherId() {
+        return teacherId;
     }
 
-    public void setTeacherid(Integer teacherid) {
-        this.teacherid = teacherid;
+    public void setTeacherId(Integer teacherId) {
+        this.teacherId = teacherId;
     }
 
-    public Integer getCollectid() {
-        return collectid;
+    public Integer getCollectId() {
+        return collectId;
     }
 
-    public void setCollectid(Integer collectid) {
-        this.collectid = collectid;
+    public void setCollectId(Integer collectId) {
+        this.collectId = collectId;
     }
 
-    public Boolean getState() {
+    public Integer getState() {
         return state;
     }
 
-    public void setState(Boolean state) {
+    public void setState(Integer state) {
         this.state = state;
     }
 
-    public Date getCreatetime() {
-        return createtime;
+    public String getRemark() {
+        return remark;
     }
 
-    public void setCreatetime(Date createtime) {
-        this.createtime = createtime;
+    public void setRemark(String remark) {
+        this.remark = remark == null ? null : remark.trim();
     }
 
-    public Date getUpdatetime() {
-        return updatetime;
+    public Date getUpdateTime() {
+        return updateTime;
     }
 
-    public void setUpdatetime(Date updatetime) {
-        this.updatetime = updatetime;
+    public void setUpdateTime(Date updateTime) {
+        this.updateTime = updateTime;
+    }
+
+    public Integer getCreateUid() {
+        return createUid;
+    }
+
+    public void setCreateUid(Integer createUid) {
+        this.createUid = createUid;
+    }
+
+    public Date getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
+    }
+
+    public Integer getUpdateUid() {
+        return updateUid;
+    }
+
+    public void setUpdateUid(Integer updateUid) {
+        this.updateUid = updateUid;
+    }
+
+    public Integer getDel() {
+        return del;
+    }
+
+    public void setDel(Integer del) {
+        this.del = del;
     }
 }

@@ -8,6 +8,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import java.util.List;
+
 
 @Service
 public class JobServiceImpl implements JobService {
@@ -59,5 +61,15 @@ public class JobServiceImpl implements JobService {
         }else {
             return false;
         }
+    }
+
+    @Override
+    public List<SchoolJob> findAll() {
+        return null;
+    }
+
+    @Override
+    public Integer countItem() {
+        return null;
     }
 }

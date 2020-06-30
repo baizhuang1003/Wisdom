@@ -1,11 +1,15 @@
 package com.tianyuan.WisdomTeacherServer.service;
 
-import com.tianyuan.WisdomTeacherServer.bean.SchoolSubject;
 import com.tianyuan.WisdomTeacherServer.bean.SchoolTerm;
+import com.tianyuan.WisdomTeacherServer.bean.SchoolTermKey;
+
+import java.util.List;
 
 public interface TermService {
-    SchoolTerm serchSubject();
-    public boolean insert(SchoolSubject schoolSubject);
-    public boolean updateJob(SchoolSubject schoolSubject);
-    public boolean deleteJob(Integer id);
+    SchoolTerm serchTerm();
+    public boolean insertTerm(SchoolTerm schoolTerm);
+    public boolean updateTerm(SchoolTerm schoolTerm);
+    public boolean deleteTerm(SchoolTermKey key);
+    List<SchoolTerm> findAll();
+    Integer countItem();
 }

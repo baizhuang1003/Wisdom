@@ -15,7 +15,7 @@ public class FloorController {
     private FloorService floorService;
     @RequestMapping(value = "/searchfloor",method = RequestMethod.GET)
     public SchoolFloor seach(){
-        SchoolFloor schoolFloor = floorService.searchClass();
+        SchoolFloor schoolFloor = floorService.searchFloor();
         return schoolFloor;
     }
 

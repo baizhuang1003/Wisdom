@@ -1,4 +1,4 @@
-package com.tianyuan.WisdomTeacherServer.bean;
+package com.example.demo.bean;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -8,15 +8,15 @@ public class TeacherCourse implements Serializable {
 
     private String name;
 
-    private Integer schoolid;
+    private Integer schoolId;
 
-    private Integer teacherid;
+    private Integer teacherId;
 
-    private Integer materialid;
+    private Integer materialId;
 
     private Integer type;
 
-    private String fileurl;
+    private String fileUrl;
 
     private String avatar;
 
@@ -24,15 +24,17 @@ public class TeacherCourse implements Serializable {
 
     private Integer sort;
 
-    private Integer createuid;
+    private String remark;
 
-    private Date createtime;
+    private Date updateTime;
 
-    private Integer updateuid;
+    private Integer createUid;
 
-    private Date updatetime;
+    private Date createTime;
 
-    private Boolean del;
+    private Integer updateUid;
+
+    private Integer del;
 
     private static final long serialVersionUID = 1L;
 
@@ -52,28 +54,28 @@ public class TeacherCourse implements Serializable {
         this.name = name == null ? null : name.trim();
     }
 
-    public Integer getSchoolid() {
-        return schoolid;
+    public Integer getSchoolId() {
+        return schoolId;
     }
 
-    public void setSchoolid(Integer schoolid) {
-        this.schoolid = schoolid;
+    public void setSchoolId(Integer schoolId) {
+        this.schoolId = schoolId;
     }
 
-    public Integer getTeacherid() {
-        return teacherid;
+    public Integer getTeacherId() {
+        return teacherId;
     }
 
-    public void setTeacherid(Integer teacherid) {
-        this.teacherid = teacherid;
+    public void setTeacherId(Integer teacherId) {
+        this.teacherId = teacherId;
     }
 
-    public Integer getMaterialid() {
-        return materialid;
+    public Integer getMaterialId() {
+        return materialId;
     }
 
-    public void setMaterialid(Integer materialid) {
-        this.materialid = materialid;
+    public void setMaterialId(Integer materialId) {
+        this.materialId = materialId;
     }
 
     public Integer getType() {
@@ -84,12 +86,12 @@ public class TeacherCourse implements Serializable {
         this.type = type;
     }
 
-    public String getFileurl() {
-        return fileurl;
+    public String getFileUrl() {
+        return fileUrl;
     }
 
-    public void setFileurl(String fileurl) {
-        this.fileurl = fileurl == null ? null : fileurl.trim();
+    public void setFileUrl(String fileUrl) {
+        this.fileUrl = fileUrl == null ? null : fileUrl.trim();
     }
 
     public String getAvatar() {
@@ -116,43 +118,51 @@ public class TeacherCourse implements Serializable {
         this.sort = sort;
     }
 
-    public Integer getCreateuid() {
-        return createuid;
+    public String getRemark() {
+        return remark;
     }
 
-    public void setCreateuid(Integer createuid) {
-        this.createuid = createuid;
+    public void setRemark(String remark) {
+        this.remark = remark == null ? null : remark.trim();
     }
 
-    public Date getCreatetime() {
-        return createtime;
+    public Date getUpdateTime() {
+        return updateTime;
     }
 
-    public void setCreatetime(Date createtime) {
-        this.createtime = createtime;
+    public void setUpdateTime(Date updateTime) {
+        this.updateTime = updateTime;
     }
 
-    public Integer getUpdateuid() {
-        return updateuid;
+    public Integer getCreateUid() {
+        return createUid;
     }
 
-    public void setUpdateuid(Integer updateuid) {
-        this.updateuid = updateuid;
+    public void setCreateUid(Integer createUid) {
+        this.createUid = createUid;
     }
 
-    public Date getUpdatetime() {
-        return updatetime;
+    public Date getCreateTime() {
+        return createTime;
     }
 
-    public void setUpdatetime(Date updatetime) {
-        this.updatetime = updatetime;
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
     }
 
-    public Boolean getDel() {
+    public Integer getUpdateUid() {
+        return updateUid;
+    }
+
+    public void setUpdateUid(Integer updateUid) {
+        this.updateUid = updateUid;
+    }
+
+    public Integer getDel() {
         return del;
     }
 
-    public void setDel(Boolean del) {
+    public void setDel(Integer del) {
         this.del = del;
     }
 }
