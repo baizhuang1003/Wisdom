@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tianyuan.WisdomTeacherServer.mapper.TeacherNexusMapper">
+  <resultMap id="BaseResultMap" type="com.tianyuan.WisdomTeacherServer.bean.TeacherNexus">
+    <id column="schoolid" jdbcType="INTEGER" property="schoolid" />
+    <id column="jobid" jdbcType="INTEGER" property="jobid" />
+    <id column="teacherid" jdbcType="INTEGER" property="teacherid" />
+    <id column="deptid" jdbcType="INTEGER" property="deptid" />
+    <id column="roleid" jdbcType="INTEGER" property="roleid" />
+    <result column="classid" jdbcType="INTEGER" property="classid" />
+    <result column="gradeid" jdbcType="INTEGER" property="gradeid" />
+    <result column="createuid" jdbcType="INTEGER" property="createuid" />
+    <result column="createtime" jdbcType="TIMESTAMP" property="createtime" />
+    <result column="updateuid" jdbcType="INTEGER" property="updateuid" />
+    <result column="updatetime" jdbcType="TIMESTAMP" property="updatetime" />
+    <result column="del" jdbcType="BIT" property="del" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    schoolid, jobid, teacherid, deptid, roleid, classid, gradeid, createuid, createtime, 
+    updateuid, updatetime, del
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="com.tianyuan.WisdomTeacherServer.bean.TeacherNexusKey" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from teacher_nexus
+    where schoolid = #{schoolid,jdbcType=INTEGER}
+      and jobid = #{jobid,jdbcType=INTEGER}
+      and teacherid = #{teacherid,jdbcType=INTEGER}
+      and deptid = #{deptid,jdbcType=INTEGER}
+      and roleid = #{roleid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="com.tianyuan.WisdomTeacherServer.bean.TeacherNexusKey">
+    delete from teacher_nexus
+    where schoolid = #{schoolid,jdbcType=INTEGER}
+      and jobid = #{jobid,jdbcType=INTEGER}
+      and teacherid = #{teacherid,jdbcType=INTEGER}
+      and deptid = #{deptid,jdbcType=INTEGER}
+      and roleid = #{roleid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.tianyuan.WisdomTeacherServer.bean.TeacherNexus">
+    insert into teacher_nexus (schoolid, jobid, teacherid, 
+      deptid, roleid, classid, 
+      gradeid, createuid, createtime, 
+      updateuid, updatetime, del
+      )
+    values (#{schoolid,jdbcType=INTEGER}, #{jobid,jdbcType=INTEGER}, #{teacherid,jdbcType=INTEGER}, 
+      #{deptid,jdbcType=INTEGER}, #{roleid,jdbcType=INTEGER}, #{classid,jdbcType=INTEGER}, 
+      #{gradeid,jdbcType=INTEGER}, #{createuid,jdbcType=INTEGER}, #{createtime,jdbcType=TIMESTAMP}, 
+      #{updateuid,jdbcType=INTEGER}, #{updatetime,jdbcType=TIMESTAMP}, #{del,jdbcType=BIT}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.tianyuan.WisdomTeacherServer.bean.TeacherNexus">
+    insert into teacher_nexus
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="schoolid != null">
+        schoolid,
+      </if>
+      <if test="jobid != null">
+        jobid,
+      </if>
+      <if test="teacherid != null">
+        teacherid,
+      </if>
+      <if test="deptid != null">
+        deptid,
+      </if>
+      <if test="roleid != null">
+        roleid,
+      </if>
+      <if test="classid != null">
+        classid,
+      </if>
+      <if test="gradeid != null">
+        gradeid,
+      </if>
+      <if test="createuid != null">
+        createuid,
+      </if>
+      <if test="createtime != null">
+        createtime,
+      </if>
+      <if test="updateuid != null">
+        updateuid,
+      </if>
+      <if test="updatetime != null">
+        updatetime,
+      </if>
+      <if test="del != null">
+        del,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="schoolid != null">
+        #{schoolid,jdbcType=INTEGER},
+      </if>
+      <if test="jobid != null">
+        #{jobid,jdbcType=INTEGER},
+      </if>
+      <if test="teacherid != null">
+        #{teacherid,jdbcType=INTEGER},
+      </if>
+      <if test="deptid != null">
+        #{deptid,jdbcType=INTEGER},
+      </if>
+      <if test="roleid != null">
+        #{roleid,jdbcType=INTEGER},
+      </if>
+      <if test="classid != null">
+        #{classid,jdbcType=INTEGER},
+      </if>
+      <if test="gradeid != null">
+        #{gradeid,jdbcType=INTEGER},
+      </if>
+      <if test="createuid != null">
+        #{createuid,jdbcType=INTEGER},
+      </if>
+      <if test="createtime != null">
+        #{createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateuid != null">
+        #{updateuid,jdbcType=INTEGER},
+      </if>
+      <if test="updatetime != null">
+        #{updatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="del != null">
+        #{del,jdbcType=BIT},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.tianyuan.WisdomTeacherServer.bean.TeacherNexus">
+    update teacher_nexus
+    <set>
+      <if test="classid != null">
+        classid = #{classid,jdbcType=INTEGER},
+      </if>
+      <if test="gradeid != null">
+        gradeid = #{gradeid,jdbcType=INTEGER},
+      </if>
+      <if test="createuid != null">
+        createuid = #{createuid,jdbcType=INTEGER},
+      </if>
+      <if test="createtime != null">
+        createtime = #{createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateuid != null">
+        updateuid = #{updateuid,jdbcType=INTEGER},
+      </if>
+      <if test="updatetime != null">
+        updatetime = #{updatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="del != null">
+        del = #{del,jdbcType=BIT},
+      </if>
+    </set>
+    where schoolid = #{schoolid,jdbcType=INTEGER}
+      and jobid = #{jobid,jdbcType=INTEGER}
+      and teacherid = #{teacherid,jdbcType=INTEGER}
+      and deptid = #{deptid,jdbcType=INTEGER}
+      and roleid = #{roleid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.tianyuan.WisdomTeacherServer.bean.TeacherNexus">
+    update teacher_nexus
+    set classid = #{classid,jdbcType=INTEGER},
+      gradeid = #{gradeid,jdbcType=INTEGER},
+      createuid = #{createuid,jdbcType=INTEGER},
+      createtime = #{createtime,jdbcType=TIMESTAMP},
+      updateuid = #{updateuid,jdbcType=INTEGER},
+      updatetime = #{updatetime,jdbcType=TIMESTAMP},
+      del = #{del,jdbcType=BIT}
+    where schoolid = #{schoolid,jdbcType=INTEGER}
+      and jobid = #{jobid,jdbcType=INTEGER}
+      and teacherid = #{teacherid,jdbcType=INTEGER}
+      and deptid = #{deptid,jdbcType=INTEGER}
+      and roleid = #{roleid,jdbcType=INTEGER}
+  </update>
+</mapper>

@@ -1,0 +1,424 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tianyuan.WisdomTeacherServer.mapper.TeacherInfoMapper">
+  <resultMap id="BaseResultMap" type="com.tianyuan.WisdomTeacherServer.bean.TeacherInfo">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="qihang_id" jdbcType="VARCHAR" property="qihangId" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="nick" jdbcType="VARCHAR" property="nick" />
+    <result column="mobile" jdbcType="VARCHAR" property="mobile" />
+    <result column="email" jdbcType="VARCHAR" property="email" />
+    <result column="avatar" jdbcType="VARCHAR" property="avatar" />
+    <result column="gender" jdbcType="INTEGER" property="gender" />
+    <result column="username" jdbcType="VARCHAR" property="username" />
+    <result column="password" jdbcType="VARCHAR" property="password" />
+    <result column="code" jdbcType="VARCHAR" property="code" />
+    <result column="idnumber" jdbcType="VARCHAR" property="idnumber" />
+    <result column="birthdate" jdbcType="VARCHAR" property="birthdate" />
+    <result column="jobdate" jdbcType="TIMESTAMP" property="jobdate" />
+    <result column="workage" jdbcType="VARCHAR" property="workage" />
+    <result column="ethnic" jdbcType="VARCHAR" property="ethnic" />
+    <result column="political" jdbcType="VARCHAR" property="political" />
+    <result column="regionid" jdbcType="VARCHAR" property="regionid" />
+    <result column="region" jdbcType="VARCHAR" property="region" />
+    <result column="address" jdbcType="VARCHAR" property="address" />
+    <result column="qqcode" jdbcType="VARCHAR" property="qqcode" />
+    <result column="wechant" jdbcType="VARCHAR" property="wechant" />
+    <result column="idface" jdbcType="VARCHAR" property="idface" />
+    <result column="idback" jdbcType="VARCHAR" property="idback" />
+    <result column="idtake" jdbcType="VARCHAR" property="idtake" />
+    <result column="idcode" jdbcType="VARCHAR" property="idcode" />
+    <result column="really" jdbcType="INTEGER" property="really" />
+    <result column="enable" jdbcType="INTEGER" property="enable" />
+    <result column="updatetime" jdbcType="TIMESTAMP" property="updatetime" />
+    <result column="createuid" jdbcType="INTEGER" property="createuid" />
+    <result column="createtime" jdbcType="TIMESTAMP" property="createtime" />
+    <result column="updateuid" jdbcType="INTEGER" property="updateuid" />
+    <result column="del" jdbcType="BIT" property="del" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, qihang_id, name, nick, mobile, email, avatar, gender, username, password, code, 
+    idnumber, birthdate, jobdate, workage, ethnic, political, regionid, region, address, 
+    qqcode, wechant, idface, idback, idtake, idcode, really, enable, updatetime, createuid, 
+    createtime, updateuid, del
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from teacher_info
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from teacher_info
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.tianyuan.WisdomTeacherServer.bean.TeacherInfo">
+    insert into teacher_info (id, qihang_id, name, 
+      nick, mobile, email, 
+      avatar, gender, username, 
+      password, code, idnumber, 
+      birthdate, jobdate, workage, 
+      ethnic, political, regionid, 
+      region, address, qqcode, 
+      wechant, idface, idback, 
+      idtake, idcode, really, 
+      enable, updatetime, createuid, 
+      createtime, updateuid, del
+      )
+    values (#{id,jdbcType=INTEGER}, #{qihangId,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, 
+      #{nick,jdbcType=VARCHAR}, #{mobile,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, 
+      #{avatar,jdbcType=VARCHAR}, #{gender,jdbcType=INTEGER}, #{username,jdbcType=VARCHAR}, 
+      #{password,jdbcType=VARCHAR}, #{code,jdbcType=VARCHAR}, #{idnumber,jdbcType=VARCHAR}, 
+      #{birthdate,jdbcType=VARCHAR}, #{jobdate,jdbcType=TIMESTAMP}, #{workage,jdbcType=VARCHAR}, 
+      #{ethnic,jdbcType=VARCHAR}, #{political,jdbcType=VARCHAR}, #{regionid,jdbcType=VARCHAR}, 
+      #{region,jdbcType=VARCHAR}, #{address,jdbcType=VARCHAR}, #{qqcode,jdbcType=VARCHAR}, 
+      #{wechant,jdbcType=VARCHAR}, #{idface,jdbcType=VARCHAR}, #{idback,jdbcType=VARCHAR}, 
+      #{idtake,jdbcType=VARCHAR}, #{idcode,jdbcType=VARCHAR}, #{really,jdbcType=INTEGER}, 
+      #{enable,jdbcType=INTEGER}, #{updatetime,jdbcType=TIMESTAMP}, #{createuid,jdbcType=INTEGER}, 
+      #{createtime,jdbcType=TIMESTAMP}, #{updateuid,jdbcType=INTEGER}, #{del,jdbcType=BIT}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.tianyuan.WisdomTeacherServer.bean.TeacherInfo">
+    insert into teacher_info
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="qihangId != null">
+        qihang_id,
+      </if>
+      <if test="name != null">
+        name,
+      </if>
+      <if test="nick != null">
+        nick,
+      </if>
+      <if test="mobile != null">
+        mobile,
+      </if>
+      <if test="email != null">
+        email,
+      </if>
+      <if test="avatar != null">
+        avatar,
+      </if>
+      <if test="gender != null">
+        gender,
+      </if>
+      <if test="username != null">
+        username,
+      </if>
+      <if test="password != null">
+        password,
+      </if>
+      <if test="code != null">
+        code,
+      </if>
+      <if test="idnumber != null">
+        idnumber,
+      </if>
+      <if test="birthdate != null">
+        birthdate,
+      </if>
+      <if test="jobdate != null">
+        jobdate,
+      </if>
+      <if test="workage != null">
+        workage,
+      </if>
+      <if test="ethnic != null">
+        ethnic,
+      </if>
+      <if test="political != null">
+        political,
+      </if>
+      <if test="regionid != null">
+        regionid,
+      </if>
+      <if test="region != null">
+        region,
+      </if>
+      <if test="address != null">
+        address,
+      </if>
+      <if test="qqcode != null">
+        qqcode,
+      </if>
+      <if test="wechant != null">
+        wechant,
+      </if>
+      <if test="idface != null">
+        idface,
+      </if>
+      <if test="idback != null">
+        idback,
+      </if>
+      <if test="idtake != null">
+        idtake,
+      </if>
+      <if test="idcode != null">
+        idcode,
+      </if>
+      <if test="really != null">
+        really,
+      </if>
+      <if test="enable != null">
+        enable,
+      </if>
+      <if test="updatetime != null">
+        updatetime,
+      </if>
+      <if test="createuid != null">
+        createuid,
+      </if>
+      <if test="createtime != null">
+        createtime,
+      </if>
+      <if test="updateuid != null">
+        updateuid,
+      </if>
+      <if test="del != null">
+        del,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="qihangId != null">
+        #{qihangId,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="nick != null">
+        #{nick,jdbcType=VARCHAR},
+      </if>
+      <if test="mobile != null">
+        #{mobile,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null">
+        #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="avatar != null">
+        #{avatar,jdbcType=VARCHAR},
+      </if>
+      <if test="gender != null">
+        #{gender,jdbcType=INTEGER},
+      </if>
+      <if test="username != null">
+        #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null">
+        #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="code != null">
+        #{code,jdbcType=VARCHAR},
+      </if>
+      <if test="idnumber != null">
+        #{idnumber,jdbcType=VARCHAR},
+      </if>
+      <if test="birthdate != null">
+        #{birthdate,jdbcType=VARCHAR},
+      </if>
+      <if test="jobdate != null">
+        #{jobdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="workage != null">
+        #{workage,jdbcType=VARCHAR},
+      </if>
+      <if test="ethnic != null">
+        #{ethnic,jdbcType=VARCHAR},
+      </if>
+      <if test="political != null">
+        #{political,jdbcType=VARCHAR},
+      </if>
+      <if test="regionid != null">
+        #{regionid,jdbcType=VARCHAR},
+      </if>
+      <if test="region != null">
+        #{region,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null">
+        #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="qqcode != null">
+        #{qqcode,jdbcType=VARCHAR},
+      </if>
+      <if test="wechant != null">
+        #{wechant,jdbcType=VARCHAR},
+      </if>
+      <if test="idface != null">
+        #{idface,jdbcType=VARCHAR},
+      </if>
+      <if test="idback != null">
+        #{idback,jdbcType=VARCHAR},
+      </if>
+      <if test="idtake != null">
+        #{idtake,jdbcType=VARCHAR},
+      </if>
+      <if test="idcode != null">
+        #{idcode,jdbcType=VARCHAR},
+      </if>
+      <if test="really != null">
+        #{really,jdbcType=INTEGER},
+      </if>
+      <if test="enable != null">
+        #{enable,jdbcType=INTEGER},
+      </if>
+      <if test="updatetime != null">
+        #{updatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createuid != null">
+        #{createuid,jdbcType=INTEGER},
+      </if>
+      <if test="createtime != null">
+        #{createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateuid != null">
+        #{updateuid,jdbcType=INTEGER},
+      </if>
+      <if test="del != null">
+        #{del,jdbcType=BIT},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.tianyuan.WisdomTeacherServer.bean.TeacherInfo">
+    update teacher_info
+    <set>
+      <if test="qihangId != null">
+        qihang_id = #{qihangId,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null">
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="nick != null">
+        nick = #{nick,jdbcType=VARCHAR},
+      </if>
+      <if test="mobile != null">
+        mobile = #{mobile,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null">
+        email = #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="avatar != null">
+        avatar = #{avatar,jdbcType=VARCHAR},
+      </if>
+      <if test="gender != null">
+        gender = #{gender,jdbcType=INTEGER},
+      </if>
+      <if test="username != null">
+        username = #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null">
+        password = #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="code != null">
+        code = #{code,jdbcType=VARCHAR},
+      </if>
+      <if test="idnumber != null">
+        idnumber = #{idnumber,jdbcType=VARCHAR},
+      </if>
+      <if test="birthdate != null">
+        birthdate = #{birthdate,jdbcType=VARCHAR},
+      </if>
+      <if test="jobdate != null">
+        jobdate = #{jobdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="workage != null">
+        workage = #{workage,jdbcType=VARCHAR},
+      </if>
+      <if test="ethnic != null">
+        ethnic = #{ethnic,jdbcType=VARCHAR},
+      </if>
+      <if test="political != null">
+        political = #{political,jdbcType=VARCHAR},
+      </if>
+      <if test="regionid != null">
+        regionid = #{regionid,jdbcType=VARCHAR},
+      </if>
+      <if test="region != null">
+        region = #{region,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null">
+        address = #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="qqcode != null">
+        qqcode = #{qqcode,jdbcType=VARCHAR},
+      </if>
+      <if test="wechant != null">
+        wechant = #{wechant,jdbcType=VARCHAR},
+      </if>
+      <if test="idface != null">
+        idface = #{idface,jdbcType=VARCHAR},
+      </if>
+      <if test="idback != null">
+        idback = #{idback,jdbcType=VARCHAR},
+      </if>
+      <if test="idtake != null">
+        idtake = #{idtake,jdbcType=VARCHAR},
+      </if>
+      <if test="idcode != null">
+        idcode = #{idcode,jdbcType=VARCHAR},
+      </if>
+      <if test="really != null">
+        really = #{really,jdbcType=INTEGER},
+      </if>
+      <if test="enable != null">
+        enable = #{enable,jdbcType=INTEGER},
+      </if>
+      <if test="updatetime != null">
+        updatetime = #{updatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createuid != null">
+        createuid = #{createuid,jdbcType=INTEGER},
+      </if>
+      <if test="createtime != null">
+        createtime = #{createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateuid != null">
+        updateuid = #{updateuid,jdbcType=INTEGER},
+      </if>
+      <if test="del != null">
+        del = #{del,jdbcType=BIT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.tianyuan.WisdomTeacherServer.bean.TeacherInfo">
+    update teacher_info
+    set qihang_id = #{qihangId,jdbcType=VARCHAR},
+      name = #{name,jdbcType=VARCHAR},
+      nick = #{nick,jdbcType=VARCHAR},
+      mobile = #{mobile,jdbcType=VARCHAR},
+      email = #{email,jdbcType=VARCHAR},
+      avatar = #{avatar,jdbcType=VARCHAR},
+      gender = #{gender,jdbcType=INTEGER},
+      username = #{username,jdbcType=VARCHAR},
+      password = #{password,jdbcType=VARCHAR},
+      code = #{code,jdbcType=VARCHAR},
+      idnumber = #{idnumber,jdbcType=VARCHAR},
+      birthdate = #{birthdate,jdbcType=VARCHAR},
+      jobdate = #{jobdate,jdbcType=TIMESTAMP},
+      workage = #{workage,jdbcType=VARCHAR},
+      ethnic = #{ethnic,jdbcType=VARCHAR},
+      political = #{political,jdbcType=VARCHAR},
+      regionid = #{regionid,jdbcType=VARCHAR},
+      region = #{region,jdbcType=VARCHAR},
+      address = #{address,jdbcType=VARCHAR},
+      qqcode = #{qqcode,jdbcType=VARCHAR},
+      wechant = #{wechant,jdbcType=VARCHAR},
+      idface = #{idface,jdbcType=VARCHAR},
+      idback = #{idback,jdbcType=VARCHAR},
+      idtake = #{idtake,jdbcType=VARCHAR},
+      idcode = #{idcode,jdbcType=VARCHAR},
+      really = #{really,jdbcType=INTEGER},
+      enable = #{enable,jdbcType=INTEGER},
+      updatetime = #{updatetime,jdbcType=TIMESTAMP},
+      createuid = #{createuid,jdbcType=INTEGER},
+      createtime = #{createtime,jdbcType=TIMESTAMP},
+      updateuid = #{updateuid,jdbcType=INTEGER},
+      del = #{del,jdbcType=BIT}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

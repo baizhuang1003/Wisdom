@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tianyuan.WisdomTeacherServer.mapper.RegionProvinceMapper">
+  <resultMap id="BaseResultMap" type="com.tianyuan.WisdomTeacherServer.bean.RegionProvince">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="level" jdbcType="INTEGER" property="level" />
+  </resultMap>
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.tianyuan.WisdomTeacherServer.bean.RegionProvinceWithBLOBs">
+    <result column="code" jdbcType="LONGVARCHAR" property="code" />
+    <result column="name" jdbcType="LONGVARCHAR" property="name" />
+    <result column="province" jdbcType="LONGVARCHAR" property="province" />
+    <result column="city" jdbcType="LONGVARCHAR" property="city" />
+    <result column="zone" jdbcType="LONGVARCHAR" property="zone" />
+    <result column="town" jdbcType="LONGVARCHAR" property="town" />
+    <result column="village" jdbcType="LONGVARCHAR" property="village" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, level
+  </sql>
+  <sql id="Blob_Column_List">
+    code, name, province, city, zone, town, village
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="ResultMapWithBLOBs">
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from region_province
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+
+  <select id="findAll" resultType="com.tianyuan.WisdomTeacherServer.bean.RegionProvinceWithBLOBs">
+    select
+    <include refid="Base_Column_List" />
+    from region_province
+  </select>
+
+  <select id="countItem" resultType="java.lang.Integer">
+    select
+    count(*)
+    from region_province
+  </select>
+
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from region_province
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.tianyuan.WisdomTeacherServer.bean.RegionProvinceWithBLOBs">
+    insert into region_province (id, level, code, 
+      name, province, city, 
+      zone, town, village
+      )
+    values (#{id,jdbcType=INTEGER}, #{level,jdbcType=INTEGER}, #{code,jdbcType=LONGVARCHAR}, 
+      #{name,jdbcType=LONGVARCHAR}, #{province,jdbcType=LONGVARCHAR}, #{city,jdbcType=LONGVARCHAR}, 
+      #{zone,jdbcType=LONGVARCHAR}, #{town,jdbcType=LONGVARCHAR}, #{village,jdbcType=LONGVARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.tianyuan.WisdomTeacherServer.bean.RegionProvinceWithBLOBs">
+    insert into region_province
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="level != null">
+        level,
+      </if>
+      <if test="code != null">
+        code,
+      </if>
+      <if test="name != null">
+        name,
+      </if>
+      <if test="province != null">
+        province,
+      </if>
+      <if test="city != null">
+        city,
+      </if>
+      <if test="zone != null">
+        zone,
+      </if>
+      <if test="town != null">
+        town,
+      </if>
+      <if test="village != null">
+        village,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="level != null">
+        #{level,jdbcType=INTEGER},
+      </if>
+      <if test="code != null">
+        #{code,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="province != null">
+        #{province,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="city != null">
+        #{city,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="zone != null">
+        #{zone,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="town != null">
+        #{town,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="village != null">
+        #{village,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.tianyuan.WisdomTeacherServer.bean.RegionProvinceWithBLOBs">
+    update region_province
+    <set>
+      <if test="level != null">
+        level = #{level,jdbcType=INTEGER},
+      </if>
+      <if test="code != null">
+        code = #{code,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="name != null">
+        name = #{name,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="province != null">
+        province = #{province,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="city != null">
+        city = #{city,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="zone != null">
+        zone = #{zone,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="town != null">
+        town = #{town,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="village != null">
+        village = #{village,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.tianyuan.WisdomTeacherServer.bean.RegionProvinceWithBLOBs">
+    update region_province
+    set level = #{level,jdbcType=INTEGER},
+      code = #{code,jdbcType=LONGVARCHAR},
+      name = #{name,jdbcType=LONGVARCHAR},
+      province = #{province,jdbcType=LONGVARCHAR},
+      city = #{city,jdbcType=LONGVARCHAR},
+      zone = #{zone,jdbcType=LONGVARCHAR},
+      town = #{town,jdbcType=LONGVARCHAR},
+      village = #{village,jdbcType=LONGVARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.tianyuan.WisdomTeacherServer.bean.RegionProvince">
+    update region_province
+    set level = #{level,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>
