@@ -1,7 +1,6 @@
 package com.tianyuan.WisdomTeacherServer.service.impl;
 
-import com.tianyuan.WisdomTeacherServer.bean.SchoolStudent;
-import com.tianyuan.WisdomTeacherServer.mapper.SchoolStudentMapper;
+
 import com.tianyuan.WisdomTeacherServer.service.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -11,7 +10,7 @@ import java.util.List;
 @Service
 public class UserServiceImpl implements IUserService {
 
-    @Autowired
+   /* @Autowired
     private SchoolStudentMapper schoolStudentMapper;
 
     public SchoolStudent searchStudent() {
@@ -44,5 +43,5 @@ public class UserServiceImpl implements IUserService {
     public Integer countItem() {
         Integer countItem = schoolStudentMapper.countItem();
         return countItem;
-    }
+    }*/
 }

@@ -4,58 +4,46 @@
   <resultMap id="BaseResultMap" type="com.tianyuan.WisdomTeacherServer.bean.RegionZone">
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="level" jdbcType="INTEGER" property="level" />
-  </resultMap>
-  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.tianyuan.WisdomTeacherServer.bean.RegionZoneWithBLOBs">
-    <result column="code" jdbcType="LONGVARCHAR" property="code" />
-    <result column="name" jdbcType="LONGVARCHAR" property="name" />
-    <result column="province" jdbcType="LONGVARCHAR" property="province" />
-    <result column="city" jdbcType="LONGVARCHAR" property="city" />
-    <result column="zone" jdbcType="LONGVARCHAR" property="zone" />
-    <result column="town" jdbcType="LONGVARCHAR" property="town" />
-    <result column="village" jdbcType="LONGVARCHAR" property="village" />
+    <result column="code" jdbcType="VARCHAR" property="code" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="province" jdbcType="VARCHAR" property="province" />
+    <result column="city" jdbcType="VARCHAR" property="city" />
+    <result column="zone" jdbcType="VARCHAR" property="zone" />
+    <result column="town" jdbcType="VARCHAR" property="town" />
+    <result column="village" jdbcType="VARCHAR" property="village" />
   </resultMap>
   <sql id="Base_Column_List">
-    id, level
+    id, level, code, name, province, city, zone, town, village
   </sql>
-  <sql id="Blob_Column_List">
-    code, name, province, city, zone, town, village
-  </sql>
-  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="ResultMapWithBLOBs">
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
-    ,
-    <include refid="Blob_Column_List" />
     from region_zone
     where id = #{id,jdbcType=INTEGER}
   </select>
 
-  <select id="findAll" resultType="com.tianyuan.WisdomTeacherServer.bean.RegionZoneWithBLOBs">
+  <select id="searchByZone" parameterType="java.lang.String" resultMap="BaseResultMap">
     select
     <include refid="Base_Column_List" />
     from region_zone
-  </select>
-
-  <select id="countItem" resultType="java.lang.Integer">
-    select
-    count(*)
-    from region_zone
+    where province = #{province,jdbcType=VARCHAR} and city = #{city,jdbcType=VARCHAR}
   </select>
 
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from region_zone
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.tianyuan.WisdomTeacherServer.bean.RegionZoneWithBLOBs">
+  <insert id="insert" parameterType="com.tianyuan.WisdomTeacherServer.bean.RegionZone">
     insert into region_zone (id, level, code, 
       name, province, city, 
       zone, town, village
       )
-    values (#{id,jdbcType=INTEGER}, #{level,jdbcType=INTEGER}, #{code,jdbcType=LONGVARCHAR}, 
-      #{name,jdbcType=LONGVARCHAR}, #{province,jdbcType=LONGVARCHAR}, #{city,jdbcType=LONGVARCHAR}, 
-      #{zone,jdbcType=LONGVARCHAR}, #{town,jdbcType=LONGVARCHAR}, #{village,jdbcType=LONGVARCHAR}
+    values (#{id,jdbcType=INTEGER}, #{level,jdbcType=INTEGER}, #{code,jdbcType=VARCHAR}, 
+      #{name,jdbcType=VARCHAR}, #{province,jdbcType=VARCHAR}, #{city,jdbcType=VARCHAR}, 
+      #{zone,jdbcType=VARCHAR}, #{town,jdbcType=VARCHAR}, #{village,jdbcType=VARCHAR}
       )
   </insert>
-  <insert id="insertSelective" parameterType="com.tianyuan.WisdomTeacherServer.bean.RegionZoneWithBLOBs">
+  <insert id="insertSelective" parameterType="com.tianyuan.WisdomTeacherServer.bean.RegionZone">
     insert into region_zone
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -94,73 +82,68 @@
         #{level,jdbcType=INTEGER},
       </if>
       <if test="code != null">
-        #{code,jdbcType=LONGVARCHAR},
+        #{code,jdbcType=VARCHAR},
       </if>
       <if test="name != null">
-        #{name,jdbcType=LONGVARCHAR},
+        #{name,jdbcType=VARCHAR},
       </if>
       <if test="province != null">
-        #{province,jdbcType=LONGVARCHAR},
+        #{province,jdbcType=VARCHAR},
       </if>
       <if test="city != null">
-        #{city,jdbcType=LONGVARCHAR},
+        #{city,jdbcType=VARCHAR},
       </if>
       <if test="zone != null">
-        #{zone,jdbcType=LONGVARCHAR},
+        #{zone,jdbcType=VARCHAR},
       </if>
       <if test="town != null">
-        #{town,jdbcType=LONGVARCHAR},
+        #{town,jdbcType=VARCHAR},
       </if>
       <if test="village != null">
-        #{village,jdbcType=LONGVARCHAR},
+        #{village,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.tianyuan.WisdomTeacherServer.bean.RegionZoneWithBLOBs">
+  <update id="updateByPrimaryKeySelective" parameterType="com.tianyuan.WisdomTeacherServer.bean.RegionZone">
     update region_zone
     <set>
       <if test="level != null">
         level = #{level,jdbcType=INTEGER},
       </if>
       <if test="code != null">
-        code = #{code,jdbcType=LONGVARCHAR},
+        code = #{code,jdbcType=VARCHAR},
       </if>
       <if test="name != null">
-        name = #{name,jdbcType=LONGVARCHAR},
+        name = #{name,jdbcType=VARCHAR},
       </if>
       <if test="province != null">
-        province = #{province,jdbcType=LONGVARCHAR},
+        province = #{province,jdbcType=VARCHAR},
       </if>
       <if test="city != null">
-        city = #{city,jdbcType=LONGVARCHAR},
+        city = #{city,jdbcType=VARCHAR},
       </if>
       <if test="zone != null">
-        zone = #{zone,jdbcType=LONGVARCHAR},
+        zone = #{zone,jdbcType=VARCHAR},
       </if>
       <if test="town != null">
-        town = #{town,jdbcType=LONGVARCHAR},
+        town = #{town,jdbcType=VARCHAR},
       </if>
       <if test="village != null">
-        village = #{village,jdbcType=LONGVARCHAR},
+        village = #{village,jdbcType=VARCHAR},
       </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.tianyuan.WisdomTeacherServer.bean.RegionZoneWithBLOBs">
-    update region_zone
-    set level = #{level,jdbcType=INTEGER},
-      code = #{code,jdbcType=LONGVARCHAR},
-      name = #{name,jdbcType=LONGVARCHAR},
-      province = #{province,jdbcType=LONGVARCHAR},
-      city = #{city,jdbcType=LONGVARCHAR},
-      zone = #{zone,jdbcType=LONGVARCHAR},
-      town = #{town,jdbcType=LONGVARCHAR},
-      village = #{village,jdbcType=LONGVARCHAR}
-    where id = #{id,jdbcType=INTEGER}
-  </update>
   <update id="updateByPrimaryKey" parameterType="com.tianyuan.WisdomTeacherServer.bean.RegionZone">
     update region_zone
-    set level = #{level,jdbcType=INTEGER}
+    set level = #{level,jdbcType=INTEGER},
+      code = #{code,jdbcType=VARCHAR},
+      name = #{name,jdbcType=VARCHAR},
+      province = #{province,jdbcType=VARCHAR},
+      city = #{city,jdbcType=VARCHAR},
+      zone = #{zone,jdbcType=VARCHAR},
+      town = #{town,jdbcType=VARCHAR},
+      village = #{village,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>

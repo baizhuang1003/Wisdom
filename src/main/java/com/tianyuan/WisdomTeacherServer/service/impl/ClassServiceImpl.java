@@ -14,10 +14,17 @@ public class ClassServiceImpl implements ClassService {
     @Autowired
     private SchoolClassMapper schoolClassMapper;
 
-    public SchoolClass searchClass(){
-        SchoolClass schoolClass = schoolClassMapper.selectByPrimaryKey(1);
-        return  schoolClass;
+    @Override
+    public SchoolClass searchClass(Integer id) {
+        SchoolClass schoolClass = schoolClassMapper.selectByPrimaryKey(id);
+        if (schoolClass != null){
+            return  schoolClass;
+        }else{
+            return null;
+        }
+
     }
+
     public boolean insertClass(SchoolClass schoolClass){
         int count = schoolClassMapper.insert(schoolClass);
         if (count > 0) {
@@ -46,12 +53,21 @@ public class ClassServiceImpl implements ClassService {
     }
 
     @Override
-    public List<SchoolClass> findAll() {
-        return null;
+    public List<SchoolClass> findAll(String gradeId) {
+        if(gradeId != null && !"".equals(gradeId)){
+            List<SchoolClass> schoolClasses = schoolClassMapper.classList(Integer.parseInt(gradeId));
+            return schoolClasses;
+        }else{
+            List<SchoolClass> schoolClasses = schoolClassMapper.findAll();
+            return schoolClasses;
+        }
+        //
+
     }
 
     @Override
     public Integer countItem() {
-        return null;
+        Integer countItem = schoolClassMapper.countItem();
+        return countItem;
     }
 }

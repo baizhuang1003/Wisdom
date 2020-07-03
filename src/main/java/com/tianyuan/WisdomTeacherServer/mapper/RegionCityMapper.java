@@ -2,6 +2,8 @@ package com.tianyuan.WisdomTeacherServer.mapper;
 
 import com.tianyuan.WisdomTeacherServer.bean.RegionCity;
 
+import java.util.List;
+
 public interface RegionCityMapper {
     int deleteByPrimaryKey(Integer id);
 
@@ -14,4 +16,8 @@ public interface RegionCityMapper {
     int updateByPrimaryKeySelective(RegionCity record);
 
     int updateByPrimaryKey(RegionCity record);
+
+    List<RegionCity> selectByProvince(String province);
+
+
 }

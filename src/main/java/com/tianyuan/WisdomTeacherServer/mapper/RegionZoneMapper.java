@@ -2,6 +2,8 @@ package com.tianyuan.WisdomTeacherServer.mapper;
 
 import com.tianyuan.WisdomTeacherServer.bean.RegionZone;
 
+import java.util.List;
+
 public interface RegionZoneMapper {
     int deleteByPrimaryKey(Integer id);
 
@@ -14,4 +16,7 @@ public interface RegionZoneMapper {
     int updateByPrimaryKeySelective(RegionZone record);
 
     int updateByPrimaryKey(RegionZone record);
+
+    List<RegionZone> searchByZone(String province, String city);
+
 }

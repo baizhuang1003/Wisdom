@@ -21,6 +21,19 @@
     from school_floor
     where id = #{id,jdbcType=INTEGER}
   </select>
+
+  <select id="findAll" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from school_floor
+  </select>
+
+  <select id="countItem" resultMap="BaseResultMap">
+    select
+    count(*)
+    from school_floor
+  </select>
+
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from school_floor
     where id = #{id,jdbcType=INTEGER}

@@ -1,8 +1,7 @@
 package com.tianyuan.WisdomTeacherServer.service.impl;
 
-import com.tianyuan.WisdomTeacherServer.bean.SchoolSubject;
+import com.tianyuan.WisdomTeacherServer.bean.RegionProvince;
 import com.tianyuan.WisdomTeacherServer.bean.SchoolTerm;
-import com.tianyuan.WisdomTeacherServer.bean.SchoolTermKey;
 import com.tianyuan.WisdomTeacherServer.mapper.SchoolTermMapper;
 import com.tianyuan.WisdomTeacherServer.service.TermService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,10 +15,6 @@ public class TermServiceImpl implements TermService {
     @Autowired
     private SchoolTermMapper schoolTermMapper;
 
-    @Override
-    public SchoolTerm serchTerm() {
-        return null;
-    }
 
     @Override
     public boolean insertTerm(SchoolTerm schoolTerm) {
@@ -42,8 +37,8 @@ public class TermServiceImpl implements TermService {
     }
 
     @Override
-    public boolean deleteTerm(SchoolTermKey key) {
-        int count = schoolTermMapper.deleteByPrimaryKey(key);
+    public boolean deleteTerm(Integer id) {
+        int count = schoolTermMapper.deleteByPrimaryKey(id);
         if (count > 0) {
             return true;
         } else {
@@ -53,12 +48,18 @@ public class TermServiceImpl implements TermService {
 
     @Override
     public List<SchoolTerm> findAll() {
-        return null;
+        List<SchoolTerm> all = schoolTermMapper.findAll();
+        return all;
     }
 
     @Override
     public Integer countItem() {
-        return null;
+        int count =schoolTermMapper.countItem();
+        if (!"".equals(count)){
+            return count;
+        }else {
+            return null;
+        }
     }
     /*@Autowired
     private SchoolTerm*/

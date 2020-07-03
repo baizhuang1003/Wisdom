@@ -21,6 +21,14 @@
     from region_zone
     where id = #{id,jdbcType=INTEGER}
   </select>
+
+  <select id="searchByZone" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from region_zone
+    where province = #{province,jdbcType=VARCHAR} and city = #{city,jdbcType=VARCHAR}
+  </select>
+
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from region_zone
     where id = #{id,jdbcType=INTEGER}

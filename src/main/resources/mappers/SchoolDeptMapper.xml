@@ -23,6 +23,26 @@
     from school_dept
     where id = #{id,jdbcType=INTEGER}
   </select>
+
+  <select id="findAll"  resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from school_dept
+  </select>
+
+  <select id="findByPid" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from school_dept
+    where pid = #{id,jdbcType=INTEGER}
+  </select>
+
+  <select id="countItem"  parameterType="java.lang.Integer"  resultMap="BaseResultMap">
+    select
+    count(*)
+    from school_dept
+  </select>
+
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from school_dept
     where id = #{id,jdbcType=INTEGER}

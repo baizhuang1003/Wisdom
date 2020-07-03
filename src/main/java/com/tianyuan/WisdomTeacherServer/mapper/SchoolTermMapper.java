@@ -2,6 +2,8 @@ package com.tianyuan.WisdomTeacherServer.mapper;
 
 import com.tianyuan.WisdomTeacherServer.bean.SchoolTerm;
 
+import java.util.List;
+
 public interface SchoolTermMapper {
     int deleteByPrimaryKey(Integer id);
 
@@ -14,4 +16,8 @@ public interface SchoolTermMapper {
     int updateByPrimaryKeySelective(SchoolTerm record);
 
     int updateByPrimaryKey(SchoolTerm record);
+
+    List<SchoolTerm> findAll();
+
+    int countItem();
 }

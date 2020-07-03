@@ -1,5 +1,6 @@
 package com.tianyuan.WisdomTeacherServer.service.impl;
 
+import com.tianyuan.WisdomTeacherServer.bean.SchoolClass;
 import com.tianyuan.WisdomTeacherServer.bean.SchoolGrade;
 import com.tianyuan.WisdomTeacherServer.mapper.SchoolGradeMapper;
 import com.tianyuan.WisdomTeacherServer.service.GradeService;
@@ -52,7 +53,8 @@ public class GradeServiceImpl implements GradeService {
 
     @Override
     public List<SchoolGrade> findAll() {
-        return null;
+        List<SchoolGrade> schoolGrades = schoolGradeMapper.findAll();
+        return schoolGrades;
     }
 
     @Override

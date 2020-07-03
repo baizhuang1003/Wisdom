@@ -2,6 +2,8 @@ package com.tianyuan.WisdomTeacherServer.mapper;
 
 import com.tianyuan.WisdomTeacherServer.bean.SchoolFloor;
 
+import java.util.List;
+
 public interface SchoolFloorMapper {
     int deleteByPrimaryKey(Integer id);
 
@@ -14,4 +16,8 @@ public interface SchoolFloorMapper {
     int updateByPrimaryKeySelective(SchoolFloor record);
 
     int updateByPrimaryKey(SchoolFloor record);
+
+    List<SchoolFloor> findAll();
+
+    Integer countItem();
 }

@@ -1,7 +1,7 @@
 package com.tianyuan.WisdomTeacherServer.service.impl;
 
+import com.tianyuan.WisdomTeacherServer.bean.SchoolClass;
 import com.tianyuan.WisdomTeacherServer.bean.SchoolFloor;
-import com.tianyuan.WisdomTeacherServer.bean.SchoolFloorKey;
 import com.tianyuan.WisdomTeacherServer.mapper.SchoolFloorMapper;
 import com.tianyuan.WisdomTeacherServer.service.FloorService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -41,25 +41,24 @@ public class FloorServiceImpl implements FloorService {
 
     @Override
     public boolean deleteFloor(Integer id) {
-        return false;
+        int count = schoolFloorMapper.deleteByPrimaryKey(id);
+        if (count > 0 ){
+            return  true;
+        }else {
+            return false;
+        }
     }
 
     @Override
     public List<SchoolFloor> findAll() {
-        return null;
+        List<SchoolFloor> schoolClasses = schoolFloorMapper.findAll();
+        return schoolClasses;
     }
 
     @Override
     public Integer countItem() {
-        return null;
+        int countItem = schoolFloorMapper.countItem();
+        return countItem;
     }
 
-    public boolean deleteFloor(SchoolFloorKey key) {
-        int count = schoolFloorMapper.deleteByPrimaryKey(key);
-        if (count > 0) {
-            return true;
-        } else {
-            return false;
-        }
-    }
 }

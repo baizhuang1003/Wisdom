@@ -14,8 +14,8 @@ public class DeptServiceImpl implements DeptService {
 
     @Autowired
     private SchoolDeptMapper schoolDeptMapper;
-    public SchoolDept searchDept(){
-        SchoolDept schoolDept = schoolDeptMapper.selectByPrimaryKey(1);
+    public SchoolDept searchDept(Integer id){
+        SchoolDept schoolDept = schoolDeptMapper.selectByPrimaryKey(id);
         return schoolDept;
     }
 
@@ -48,12 +48,19 @@ public class DeptServiceImpl implements DeptService {
     }
 
     @Override
-    public List<SchoolDept> findAll() {
-        return null;
+    public List<SchoolDept> findAll(String id) {
+        if (!"".equals(id)){
+            List<SchoolDept> all = schoolDeptMapper.findAll();
+            return all;
+        }else{
+            List<SchoolDept> all = schoolDeptMapper.findByPid(Integer.parseInt(id));
+            return all ;
+        }
     }
 
     @Override
     public Integer countItem() {
-        return null;
+        Integer countItem = schoolDeptMapper.countItem();
+        return countItem;
     }
 }

@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface DeptService {
     //查询部门
-    SchoolDept searchDept();
+    SchoolDept searchDept(Integer id);
 
     //添加部门
     public boolean insertDept(SchoolDept schoolDept);
@@ -17,7 +17,9 @@ public interface DeptService {
 
     //删除部门
     public boolean deleteDept(Integer id);
-    List<SchoolDept> findAll();
+
+    List<SchoolDept> findAll(String id);
+
     Integer countItem();
 
 }

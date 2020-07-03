@@ -6,11 +6,11 @@ import com.tianyuan.WisdomTeacherServer.bean.SchoolSubject;
 import java.util.List;
 
 public interface ClassService {
-    SchoolClass searchClass();
-    public boolean insertClass(SchoolClass schoolClass);
-    public boolean updateClass(SchoolClass schoolClass);
-    public boolean deleteClass(Integer id);
-    List<SchoolClass> findAll();
+    SchoolClass searchClass(Integer id);
+    boolean insertClass(SchoolClass schoolClass);
+    boolean updateClass(SchoolClass schoolClass);
+    boolean deleteClass(Integer id);
+    List<SchoolClass> findAll(String gradeid);
     Integer countItem();
 
 }

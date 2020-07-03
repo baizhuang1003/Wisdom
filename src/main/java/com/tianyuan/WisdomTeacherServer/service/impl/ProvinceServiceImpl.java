@@ -1,5 +1,7 @@
 package com.tianyuan.WisdomTeacherServer.service.impl;
 
+import com.tianyuan.WisdomTeacherServer.bean.RegionProvince;
+import com.tianyuan.WisdomTeacherServer.mapper.RegionProvinceMapper;
 import com.tianyuan.WisdomTeacherServer.service.ProvinceService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -18,9 +20,4 @@ public class ProvinceServiceImpl implements ProvinceService {
         return all;
     }
 
-    @Override
-    public Integer countItem() {
-        Integer countItem = regionProvinceMapper.countItem();
-        return countItem;
-    }
 }

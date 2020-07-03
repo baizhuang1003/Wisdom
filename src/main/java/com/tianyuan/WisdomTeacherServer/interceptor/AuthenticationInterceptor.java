@@ -4,18 +4,13 @@ import com.auth0.jwt.JWT;
 import com.auth0.jwt.exceptions.JWTDecodeException;
 import com.tianyuan.WisdomTeacherServer.annotation.CheckToken;
 import com.tianyuan.WisdomTeacherServer.annotation.LoginToken;
-import com.tianyuan.WisdomTeacherServer.bean.SchoolStudent;
 import com.tianyuan.WisdomTeacherServer.service.IUserService;
 import com.tianyuan.WisdomTeacherServer.util.JwtUtil;
 import com.tianyuan.WisdomTeacherServer.vo.User;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.web.method.HandlerMethod;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -66,14 +61,17 @@ public class AuthenticationInterceptor implements HandlerInterceptor {
                     throw new RuntimeException("访问异常！");
                 }
                 // User user = userService.findUserById(userId);
-                SchoolStudent schoolStudent = userService.searchStudent(userId);
+                /*SchoolStudent schoolStudent = userService.searchStudent(userId);
                 User user = new User();
                 user.setUserName(schoolStudent.getName());
+                user.setPwd("123123");*/
+                User user = new User();
+                user.setUserName("白壮");
                 user.setPwd("123123");
 
-                if (schoolStudent == null) {
+                /*if (schoolStudent == null) {
                     throw new RuntimeException("用户不存在，请重新登录");
-                }
+                }*/
                 Boolean verify = JwtUtil.isVerify(token, user);
                 if (!verify) {
                     throw new RuntimeException("非法访问！");
