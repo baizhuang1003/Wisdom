@@ -20,8 +20,8 @@ public class GradeController {
     private GradeService gradeService;
 
     @RequestMapping(value = "/searchgrade",method = RequestMethod.GET)
-    public SchoolGrade seach(){
-        SchoolGrade schoolGrade = gradeService.searchGrade();
+    public SchoolGrade seach(Integer id){
+        SchoolGrade schoolGrade = gradeService.searchGrade(id);
         return schoolGrade;
     }
 

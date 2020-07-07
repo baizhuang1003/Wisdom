@@ -16,8 +16,8 @@ public class GradeServiceImpl implements GradeService {
 
 
     @Override
-    public SchoolGrade searchGrade() {
-        SchoolGrade schoolGrade = schoolGradeMapper.selectByPrimaryKey(1);
+    public SchoolGrade searchGrade(Integer id) {
+        SchoolGrade schoolGrade = schoolGradeMapper.selectByPrimaryKey(id);
         return schoolGrade;
     }
 
@@ -59,6 +59,7 @@ public class GradeServiceImpl implements GradeService {
 
     @Override
     public Integer countItem() {
-        return null;
+        Integer count = schoolGradeMapper.countItem();
+        return count;
     }
 }

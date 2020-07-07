@@ -21,6 +21,6 @@ public interface SchoolDeptMapper {
 
     List<SchoolDept> findByPid(Integer id);
 
-   Integer countItem();
+    Integer countItem();
 
 }

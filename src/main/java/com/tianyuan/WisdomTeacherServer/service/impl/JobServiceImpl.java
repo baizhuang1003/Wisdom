@@ -1,5 +1,6 @@
 package com.tianyuan.WisdomTeacherServer.service.impl;
 
+import com.tianyuan.WisdomTeacherServer.bean.SchoolFloor;
 import com.tianyuan.WisdomTeacherServer.bean.SchoolJob;
 import com.tianyuan.WisdomTeacherServer.mapper.SchoolJobMapper;
 import com.tianyuan.WisdomTeacherServer.service.JobService;
@@ -65,11 +66,13 @@ public class JobServiceImpl implements JobService {
 
     @Override
     public List<SchoolJob> findAll() {
-        return null;
+        List<SchoolJob> schoolClasses = schoolJobMapper.findAll();
+        return schoolClasses;
     }
 
     @Override
     public Integer countItem() {
-        return null;
+        Integer countItem = schoolJobMapper.countItem();
+        return countItem;
     }
 }

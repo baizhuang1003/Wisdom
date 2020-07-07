@@ -1,12 +1,17 @@
 package com.tianyuan.WisdomTeacherServer.controller;
 
+import com.github.pagehelper.PageHelper;
 import com.tianyuan.WisdomTeacherServer.bean.SchoolClass;
 import com.tianyuan.WisdomTeacherServer.bean.SchoolJob;
 import com.tianyuan.WisdomTeacherServer.service.JobService;
+import com.tianyuan.WisdomTeacherServer.vo.PageBean;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
 
 @RestController
 public class JobController {
@@ -35,5 +40,15 @@ public class JobController {
     public  boolean delete(Integer id) {
         boolean b = jobService.deleteJob(id);
         return b ;
+    }
+
+    @RequestMapping(value = "/jobList/{currentPage}/{pageSize}",method = RequestMethod.GET)
+    public PageBean<SchoolJob> searchjob(@PathVariable("currentPage") String currentPage, @PathVariable("pageSize") String pageSize){
+        PageHelper.startPage(Integer.parseInt(currentPage), Integer.parseInt(pageSize));
+        List<SchoolJob> allItems = jobService.findAll();
+        int countNums = jobService.countItem();
+        PageBean<SchoolJob> pageData = new PageBean<>(Integer.parseInt(currentPage), Integer.parseInt(pageSize), countNums);
+        pageData.setItems(allItems);
+        return pageData;
     }
 }

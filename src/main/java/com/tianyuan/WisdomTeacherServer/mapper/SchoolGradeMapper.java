@@ -18,4 +18,6 @@ public interface SchoolGradeMapper {
     int updateByPrimaryKey(SchoolGrade record);
 
     List<SchoolGrade> findAll();
+
+    int countItem();
 }

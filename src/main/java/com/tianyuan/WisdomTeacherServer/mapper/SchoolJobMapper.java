@@ -2,6 +2,8 @@ package com.tianyuan.WisdomTeacherServer.mapper;
 
 import com.tianyuan.WisdomTeacherServer.bean.SchoolJob;
 
+import java.util.List;
+
 public interface SchoolJobMapper {
     int deleteByPrimaryKey(Integer id);
 
@@ -14,4 +16,8 @@ public interface SchoolJobMapper {
     int updateByPrimaryKeySelective(SchoolJob record);
 
     int updateByPrimaryKey(SchoolJob record);
+
+    List<SchoolJob> findAll();
+
+    Integer countItem();
 }
