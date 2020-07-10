@@ -16,9 +16,15 @@ public class FloorServiceImpl implements FloorService {
     private SchoolFloorMapper schoolFloorMapper;
 
 
+
     @Override
-    public SchoolFloor searchFloor() {
-        return null;
+    public SchoolFloor searchFloor(Integer id) {
+        if (!"".equals(id)){
+            SchoolFloor schoolFloor = schoolFloorMapper.selectByPrimaryKey(id);
+            return schoolFloor;
+        }else{
+            return null;
+        }
     }
 
     public boolean insertFloor(SchoolFloor schoolFloor) {
@@ -60,5 +66,4 @@ public class FloorServiceImpl implements FloorService {
         int countItem = schoolFloorMapper.countItem();
         return countItem;
     }
-
 }

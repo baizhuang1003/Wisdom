@@ -61,7 +61,6 @@ public class ClassServiceImpl implements ClassService {
             List<SchoolClass> schoolClasses = schoolClassMapper.findAll();
             return schoolClasses;
         }
-        //
 
     }
 

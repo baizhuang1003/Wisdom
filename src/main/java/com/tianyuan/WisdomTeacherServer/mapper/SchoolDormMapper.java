@@ -2,6 +2,8 @@ package com.tianyuan.WisdomTeacherServer.mapper;
 
 import com.tianyuan.WisdomTeacherServer.bean.SchoolDorm;
 
+import java.util.List;
+
 public interface SchoolDormMapper {
     int deleteByPrimaryKey(Integer id);
 
@@ -14,4 +16,8 @@ public interface SchoolDormMapper {
     int updateByPrimaryKeySelective(SchoolDorm record);
 
     int updateByPrimaryKey(SchoolDorm record);
+
+    List<SchoolDorm> findAll();
+
+    Integer countItem();
 }

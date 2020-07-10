@@ -18,18 +18,14 @@ public class JobServiceImpl implements JobService {
     @Autowired
     private SchoolJobMapper schoolJobMapper;
 
-    @RequestMapping(value ="/searchjob",method = RequestMethod.GET)
+
+    @Override
     public SchoolJob searchJob(Integer id) {
         SchoolJob schoolJob = schoolJobMapper.selectByPrimaryKey(id);
         return schoolJob;
     }
 
     @Override
-    public SchoolJob searchJob() {
-        return null;
-    }
-
-    @RequestMapping(value ="/insertjob",method = RequestMethod.POST)
     public boolean insertJob(SchoolJob schoolJob) {
         int count = schoolJobMapper.insert(schoolJob);
         if (count > 0) {
@@ -41,11 +37,6 @@ public class JobServiceImpl implements JobService {
 
     @Override
     public boolean updateJob(SchoolJob schoolJob) {
-        return false;
-    }
-
-    @RequestMapping(value ="/editjob",method = RequestMethod.POST)
-    public boolean editJob(SchoolJob schoolJob) {
         int count = schoolJobMapper.updateByPrimaryKeySelective(schoolJob);
         if (count > 0) {
             return true;
@@ -54,7 +45,7 @@ public class JobServiceImpl implements JobService {
         }
     }
 
-    @RequestMapping(value ="/deletejob",method = RequestMethod.POST)
+    @Override
     public boolean deleteJob(Integer id) {
         int count = schoolJobMapper.deleteByPrimaryKey(id);
         if (count > 0) {

@@ -7,7 +7,7 @@ import com.tianyuan.WisdomTeacherServer.bean.SchoolSubject;
 import java.util.List;
 
 public interface FloorService {
-    SchoolFloor searchFloor();
+    SchoolFloor searchFloor(Integer id);
     public boolean insertFloor(SchoolFloor schoolFloor);
     public boolean updateFloor(SchoolFloor schoolFloor);
     public boolean deleteFloor(Integer id);

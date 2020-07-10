@@ -17,7 +17,7 @@ public class FloorController {
     @Autowired
     private FloorService floorService;
     @RequestMapping(value = "/searchfloor",method = RequestMethod.GET)
-    public SchoolFloor seach(){
+    public SchoolFloor seach(Integer id){
         SchoolFloor schoolFloor = floorService.searchFloor();
         return schoolFloor;
     }
