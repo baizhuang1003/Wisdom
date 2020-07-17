@@ -13,6 +13,8 @@ public interface SchoolClassMapper {
 
     SchoolClass selectByPrimaryKey(Integer id);
 
+    SchoolClass selectBySchoolOrClassid(Integer Schoolid,Integer classid);
+
     int updateByPrimaryKeySelective(SchoolClass record);
 
     int updateByPrimaryKey(SchoolClass record);

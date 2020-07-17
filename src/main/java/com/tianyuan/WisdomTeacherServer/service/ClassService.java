@@ -7,6 +7,7 @@ import java.util.List;
 
 public interface ClassService {
     SchoolClass searchClass(Integer id);
+    SchoolClass searchClassByschoolid(String schoolid,String classid);
     boolean insertClass(SchoolClass schoolClass);
     boolean updateClass(SchoolClass schoolClass);
     boolean deleteClass(Integer id);

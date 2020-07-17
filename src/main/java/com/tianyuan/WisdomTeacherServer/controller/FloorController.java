@@ -16,13 +16,13 @@ import java.util.List;
 public class FloorController {
     @Autowired
     private FloorService floorService;
-    @RequestMapping(value = "/searchfloor",method = RequestMethod.GET)
-    public SchoolFloor seach(Integer id){
-        SchoolFloor schoolFloor = floorService.searchFloor();
+    @RequestMapping(value = "/floors/{id}",method = RequestMethod.GET)
+    public SchoolFloor seach(@PathVariable("id") String id){
+        SchoolFloor schoolFloor = floorService.searchFloor(Integer.parseInt(id));
         return schoolFloor;
     }
 
-    @RequestMapping(value ="/insertfloor",method = RequestMethod.POST)
+    @RequestMapping(value ="/insertfloor",method = RequestMethod.PUT)
     public boolean insert(SchoolFloor schoolFloor){
         boolean b = floorService.insertFloor(schoolFloor);
         return b;

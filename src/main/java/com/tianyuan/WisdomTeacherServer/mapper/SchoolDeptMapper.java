@@ -23,4 +23,6 @@ public interface SchoolDeptMapper {
 
     Integer countItem();
 
+    SchoolDept selectBySchoolAndId(Integer schoolid ,Integer id);
+
 }

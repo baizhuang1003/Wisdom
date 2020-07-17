@@ -19,13 +19,13 @@ public class GradeController {
     @Autowired
     private GradeService gradeService;
 
-    @RequestMapping(value = "/searchgrade",method = RequestMethod.GET)
-    public SchoolGrade seach(Integer id){
-        SchoolGrade schoolGrade = gradeService.searchGrade(id);
+    @RequestMapping(value = "/grades/{id}",method = RequestMethod.GET)
+    public SchoolGrade seach(String id){
+        SchoolGrade schoolGrade = gradeService.searchGrade(Integer.parseInt(id));
         return schoolGrade;
     }
 
-    @RequestMapping(value ="/insertgrade",method = RequestMethod.POST)
+    @RequestMapping(value ="/insertgrade",method = RequestMethod.PUT)
     public boolean insert(SchoolGrade SchoolGrade){
         boolean b = gradeService.insertGrade(SchoolGrade);
         return b;
@@ -37,7 +37,7 @@ public class GradeController {
         return b;
     }
 
-    @RequestMapping(value ="/deletegrade",method = RequestMethod.POST)
+    @RequestMapping(value ="/deletegrade",method = RequestMethod.DELETE)
     public boolean delete(Integer id){
         boolean b = gradeService.deleteGrade(id);
         return b;

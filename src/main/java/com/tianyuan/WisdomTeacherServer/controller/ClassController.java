@@ -14,9 +14,9 @@ public class ClassController {
     @Autowired
     private ClassService classService;
 
-    @RequestMapping(value = "/searchclass",method = RequestMethod.GET)
-    public SchoolClass seachSchoolClass(Integer id){
-        SchoolClass schoolClass = classService.searchClass(id);
+    @RequestMapping(value = "/schools/{schoolid}/classes/{classid}",method = RequestMethod.GET)
+    public SchoolClass seachSchoolClass(@PathVariable("schoolid") String schoolid , @PathVariable("classid") String classid){
+        SchoolClass schoolClass = classService.searchClassByschoolid(schoolid,classid);
         if (!"".equals(schoolClass)){
             return schoolClass;
         }else{
@@ -24,7 +24,7 @@ public class ClassController {
         }
     }
 
-    @RequestMapping(value ="/insertclass",method = RequestMethod.POST)
+    @RequestMapping(value ="/insertclass",method = RequestMethod.PUT)
     public boolean insert(@RequestBody SchoolClass schoolClass){
         boolean b = classService.insertClass(schoolClass);
         return b;

@@ -18,13 +18,13 @@ public class JobController {
     @Autowired
     private JobService jobService;
 
-    @RequestMapping(value = "/searchjob",method = RequestMethod.GET)
-    public SchoolJob seach(){
-        SchoolJob schoolJob = jobService.searchJob();
+    @RequestMapping(value = "/jobs/{id}",method = RequestMethod.GET)
+    public SchoolJob seach(String id){
+        SchoolJob schoolJob = jobService.searchJob(Integer.parseInt(id));
         return schoolJob;
     }
 
-    @RequestMapping(value ="/insertjob",method = RequestMethod.POST)
+    @RequestMapping(value ="/insertjob",method = RequestMethod.PUT)
     public boolean insert(SchoolJob schoolJob) {
         boolean b= jobService.insertJob(schoolJob);
         return b;

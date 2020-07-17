@@ -19,13 +19,13 @@ public class SubjectController {
     @Autowired
     private SubjectService subjectService;
 
-    @RequestMapping(value = "/searchsubject",method = RequestMethod.GET)
-    public SchoolSubject seach(){
+    @RequestMapping(value = "/terms/{termid}/grades/{gradeid}/{id}",method = RequestMethod.GET)
+    public SchoolSubject seach(@PathVariable("termid") String termid,@PathVariable("gradeid") String gradeid,@PathVariable("id") String id){
         SchoolSubject schoolSubject = subjectService.serchSubject();
         return schoolSubject;
     }
 
-    @RequestMapping(value ="/insertsubject",method = RequestMethod.POST)
+    @RequestMapping(value ="/insertsubject",method = RequestMethod.PUT)
     public boolean insert(SchoolSubject schoolSubject){
         boolean b = subjectService.insertSubject(schoolSubject);
         return b;
@@ -37,7 +37,7 @@ public class SubjectController {
         return b;
     }
 
-    @RequestMapping(value ="/deletesubject",method = RequestMethod.POST)
+    @RequestMapping(value ="/deletesubject",method = RequestMethod.DELETE)
     public boolean delete(Integer id){
         boolean b = subjectService.deleteSubject(id);
         return b;

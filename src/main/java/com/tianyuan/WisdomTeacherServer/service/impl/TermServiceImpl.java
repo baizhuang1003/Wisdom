@@ -17,6 +17,18 @@ public class TermServiceImpl implements TermService {
 
 
     @Override
+    public SchoolTerm searchTerm(Integer id) {
+        if (!"".equals(id)){
+            SchoolTerm schoolTerm = schoolTermMapper.selectByPrimaryKey(id);
+            return  schoolTerm;
+        }else {
+            return  null;
+        }
+
+
+    }
+
+    @Override
     public boolean insertTerm(SchoolTerm schoolTerm) {
         int count = schoolTermMapper.insertSelective(schoolTerm);
         if (count > 0) {
@@ -61,6 +73,5 @@ public class TermServiceImpl implements TermService {
             return null;
         }
     }
-    /*@Autowired
-    private SchoolTerm*/
+
 }

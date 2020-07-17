@@ -19,13 +19,13 @@ public class DeptController {
     @Autowired
     private DeptService deptService;
 
-    @RequestMapping(value = "/searchdept",method = RequestMethod.GET)
-    public SchoolDept seach(Integer id){
-        SchoolDept schoolDept = deptService.searchDept(id);
+    @RequestMapping(value = "/schools/{schoolid}/depts/{id}",method = RequestMethod.GET)
+    public SchoolDept seach(@PathVariable("schoolid") String schoolid, @PathVariable("id") String id){
+        SchoolDept schoolDept = deptService.searchDeptBySchoolid(schoolid,id);
         return schoolDept;
     }
 
-    @RequestMapping(value ="/insertdept",method = RequestMethod.POST)
+    @RequestMapping(value ="/insertdept",method = RequestMethod.PUT)
     public boolean insert(SchoolDept schoolDept) {
          boolean b= deptService.insertDept(schoolDept);
         return b;

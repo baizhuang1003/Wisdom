@@ -6,6 +6,7 @@ import com.tianyuan.WisdomTeacherServer.bean.SchoolTerm;
 import com.tianyuan.WisdomTeacherServer.service.TermService;
 import com.tianyuan.WisdomTeacherServer.vo.ResponseBody;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -46,6 +47,12 @@ public class TermController {
     public boolean delete(Integer id){
         boolean b = termService.deleteTerm(id);
         return b;
+    }
+
+    @RequestMapping(value = "/term/{id}",method = RequestMethod.GET)
+    public  SchoolTerm termInfo(@PathVariable("id") String id){
+        SchoolTerm schoolTerm = termService.searchTerm(Integer.parseInt(id));
+        return schoolTerm;
     }
 
 }
