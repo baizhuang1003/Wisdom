@@ -28,6 +28,12 @@
     from school_grade
   </select>
 
+  <select id="countItem" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select
+    count(*)
+    from school_grade
+  </select>
+
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from school_grade
     where id = #{id,jdbcType=INTEGER}
